@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\File;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +21,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Blade::directive('svg', function ($expression) {
+            $expression = str_replace("'","",$expression);
+            $svgPath = public_path("svg/{$expression}.svg");
+            if (File::exists($svgPath)) {
+                $svgContent = File::get($svgPath);
+                return $svgContent;
+            }
+            return $expression;
+        });
     }
 }

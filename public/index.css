@@ -1,0 +1,157 @@
+/* index.css */
+@import "https://unpkg.com/open-props";
+@import "https://unpkg.com/open-props/normalize.min.css";
+* {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.navbar {
+  height: 7vh;
+  width: 100vw;
+  display: flex;
+  background-color: #2a2b2e;
+  gap: 3em;
+  .logo {
+    padding: 1em;
+  }
+  .list {
+    padding-left: 1em;
+    display: flex;
+    gap: 1em;
+    a {
+      align-self: center;
+      list-style: none;
+    }
+  }
+}
+
+.hero1 {
+  background-image: url(hero1.jpg);
+  height: 93vh;
+  display: flex;
+  gap: 50vw;
+  .hero1-text {
+    align-self: center;
+    margin-left: 2em;
+    color: #e1f4f3;
+    text-shadow: #2a2b2e 5px 5px 5px;
+  }
+  .buttons {
+    align-self: end;
+    left: 75%;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+  }
+  button {
+    margin: 0 1em 3em;
+    height: 4em;
+    width: 6em;
+  }
+}
+
+.hero2 {
+  height: 25em;
+  display: flex;
+  gap: 5em;
+  align-items: center;
+  justify-content: center;
+  overflow: scroll;
+  .hero2-products {
+    height: 15em;
+    min-width: 20em;
+    background-color: #e1f4f3;
+  }
+  #hero2-product1 {
+    background-image: url(p1.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  #hero2-product2 {
+    background-image: url(p2.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  #hero2-product3 {
+    background-image: url(p3.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  #hero2-product4 {
+    background-image: url(p4.webp);
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.hero3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5em;
+  .hero3-img {
+    width: 50em;
+    height: 25em;
+    background-image: url(Dhogwarts.webp);
+    background-size: 40em;
+  }
+  .hero3-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+}
+
+.hero4 {
+  margin: 5em 0 0 0;
+  height: 15vh;
+  background-color: #706c61;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  .hero4-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.hero5 {
+  margin: 5em 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+  .hero5-customers {
+    gap: 2em;
+    display: flex;
+    .hero5-img {
+      overflow: hidden;
+      width: 20em;
+      height: 15em;
+    }
+  }
+}
+
+.hero6 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .hero6-img {
+    img {
+      height: 30em;
+    }
+  }
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2a2b2e;
+  height: 5vh;
+  :where(p) {
+    max-inline-size: none;
+  }
+}
