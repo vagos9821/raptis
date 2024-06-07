@@ -1,4 +1,4 @@
-<div class="relative isolate flex overflow-hidden bg-background py-24 sm:py-32">
+<div class="relative isolate flex overflow-hidden bg-background py-24 sm:py-32" id="about-us">
     <div class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
         aria-hidden="true">
         <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-accent to-background opacity-20"

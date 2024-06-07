@@ -1,3 +1,6 @@
+<!-- resources/views/layout.blade.php -->
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -21,4 +24,11 @@
         @include('components.clients')
         @include('components.divider')
         @include('components.contact-us')
+        @include('components.divider')
+        @include('carousel.index')
     </main>
+
+    @include('components.footer')
+</body>
+
+</html>

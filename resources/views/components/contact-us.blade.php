@@ -1,4 +1,4 @@
-<section class="bg-background text-primary">
+<section class="bg-background text-primary" id="contact-us">
     <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <h2 class="mb-6 text-2xl font-bold tracking-tight text-gray-900">Επικοινωνία</h2>
         <div class="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-7">

@@ -1,4 +1,4 @@
-<div class="bg-background">
+<div class="bg-background" id="hero">
     <div class="relative isolate px-6 pt-14 lg:px-8">
         <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
             aria-hidden="true">
@@ -11,7 +11,7 @@
                 <div
                     class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
                     Χάρτινες τσάντες - είδη συσκευασίας...
-                    <a href="#" class="font-semibold text-accent"><span class="absolute inset-0"
+                    <a href="#categories" class="font-semibold text-accent"><span class="absolute inset-0"
                             aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
                 </div>
             </div>
@@ -25,11 +25,11 @@
                     τις ανάγκες των επιχειρήσεων.
                 </p>
                 <div class="mt-10 flex items-center justify-center gap-x-6">
-                    <a href="#"
-                        class="rounded-md bg-accent px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Get
-                        started</a>
-                    <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span
-                            aria-hidden="true">→</span></a>
+                    <a href="#contact-us"
+                        class="rounded-md bg-accent px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors duration-200 ease-in-out hover:bg-primary hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Επικοινωνία</a>
+                    <a href="#about-us"
+                        class="text-sm font-semibold leading-6 text-gray-900 transition-colors duration-200 ease-in-out hover:text-accent">Για
+                        εμάς <span aria-hidden="true">→</span></a>
                 </div>
             </div>
         </div>
