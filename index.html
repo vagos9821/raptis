@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+
+<html lang="en" class="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="http://www.raptis.test/favicon.ico">
+    <title>e-Bags - ΡΑΠΤΗΣ ΛΕΩΝΙΔΑΣ</title>
+    <meta name="description" content="Raptis Packing">
+    <script type="module" src="http://[::1]:5173/@vite/client"></script><link rel="stylesheet" href="http://[::1]:5173/resources/css/app.css" />
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script>
+        // Dark mode button
+        document.addEventListener('DOMContentLoaded', function() {
+            const htmlElement = document.documentElement;
+            const toggleLightButton = document.getElementById('toggle-light');
+            const toggleDarkButton = document.getElementById('toggle-dark');
+
+            function toggleDarkMode() {
+                htmlElement.classList.toggle('dark');
+            }
+            toggleLightButton.addEventListener('click', toggleDarkMode);
+            toggleDarkButton.addEventListener('click', toggleDarkMode);
+
+            const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+            if (darkModeMediaQuery.matches) {
+                htmlElement.classList.add('dark');
+            }
+        });
+    </script>
+    <script>
+        // Carousel
+        var cont = 0;
+
+        function loopSlider() {
+            var xx = setInterval(function() {
+                switch (cont) {
+                    case 0: {
+                        $("#slider-1").fadeOut(400);
+                        $("#slider-2").delay(400).fadeIn(400);
+                        $("#sButton1").removeClass("bg-purple-800");
+                        $("#sButton2").addClass("bg-purple-800");
+                        cont = 1;
+                        break;
+                    }
+                    case 1: {
+                        $("#slider-2").fadeOut(400);
+                        $("#slider-1").delay(400).fadeIn(400);
+                        $("#sButton2").removeClass("bg-purple-800");
+                        $("#sButton1").addClass("bg-purple-800");
+                        cont = 0;
+                        break;
+                    }
+                }
+            }, 8000);
+        }
+
+        function reinitLoop(time) {
+            clearInterval(xx);
+            setTimeout(loopSlider(), time);
+        }
+
+        function sliderButton1() {
+            $("#slider-2").fadeOut(400);
+            $("#slider-1").delay(400).fadeIn(400);
+            $("#sButton2").removeClass("bg-purple-800");
+            $("#sButton1").addClass("bg-purple-800");
+            reinitLoop(4000);
+            cont = 0
+        }
+
+        function sliderButton2() {
+            $("#slider-1").fadeOut(400);
+            $("#slider-2").delay(400).fadeIn(400);
+            $("#sButton1").removeClass("bg-purple-800");
+            $("#sButton2").addClass("bg-purple-800");
+            reinitLoop(4000);
+            cont = 1
+        }
+
+        $(window).ready(function() {
+            $("#slider-2").hide();
+            $("#sButton1").addClass("bg-purple-800");
+            loopSlider();
+        });
+    </script>
+</head>
+
+<body class="bg-background text-primary">
+    <nav class="bg-primary fixed left-0 right-0 top-3 z-20 mx-auto w-11/12 max-w-screen-xl rounded-md shadow-lg lg:w-full">
+    <div class="flex items-center justify-between px-4 py-3 lg:px-8">
+        <div>
+            <svg version="1.0" xmlns="/www.w3.org/2000/svg" viewBox="0 0 201.000000 200.000000"
+                preserveAspectRatio="xMidYMid meet" width="50px" height="50px">
+                <g transform="translate(0.000000,200.000000) scale(0.100000,-0.100000)"
+                    class="fill-background dark:fill-primary" stroke="none">
+                    <path
+                        d="M70 995 l0 -945 940 0 940 0 0 169 0 169 -184 376 -185 376 -54 0 -54 0 -181 -370 c-100 -204 -182 -375 -182 -380 0 -6 47 -10 110 -10 l111 0 26 60 26 60 144 0 144 0 25 -55 c16 -37 24 -74 24 -110 l0 -55 -710 0 -710 0 0 715 0 715 710 0 710 0 1 -217 0 -218 114 -225 114 -225 0 558 1 557 -940 0 -940 0 0 -945z m1490 -241 c16 -37 30 -68 30 -70 0 -2 -27 -4 -60 -4 -33 0 -60 3 -60 8 0 10 52 132 56 132 2 0 17 -30 34 -66z">
+                    </path>
+                </g>
+            </svg>
+        </div>
+        
+        <div class="hidden flex-grow justify-center space-x-[100px] text-lg lg:flex">
+            <a href="#"
+                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">Αρχική</a>
+            <a href="#about-us"
+                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">Για
+                εμάς</a>
+            <a href="#contact-us"
+                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">Επικοινωνία</a>
+            <button id="toggle-light"
+                class="text-background absolute right-[100px] top-[20px] hidden w-fit items-center justify-center gap-3 text-xs dark:flex">
+                <img src="svg/sun.svg" class="size-8"> Toggle light mode
+            </button>
+            <button id="toggle-dark"
+                class="text-background absolute right-[100px] top-[20px] flex w-fit items-center justify-center gap-3 text-xs dark:hidden">
+                <img src="svg/moon.svg" class="size-8"> Toggle dark mode
+            </button>
+        </div>
+
+        
+        <div id="menu"
+            class="bg-primary absolute right-0 top-[60px] flex hidden w-fit min-w-[200px] flex-col space-y-[20px] rounded-md p-[10px] pt-[30px] shadow-md transition-opacity lg:hidden">
+            <a href="#"
+                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">Αρχική</a>
+            <a href="#about-us"
+                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">Για
+                εμάς</a>
+            <a href="#contact-us"
+                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">Επικοινωνία</a>
+        </div>
+        <div id="burgerIcon" class="lg:hidden">
+            <svg class="fill-background transition-all ease-in hover:cursor-pointer hover:fill-accent focus:fill-accent"
+                width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M2 6C2 5.44772 2.44772 5 3 5H21C21.5523 5 22 5.44772 22 6C22 6.55228 21.5523 7 21 7H3C2.44772 7 2 6.55228 2 6Z">
+                </path>
+                <path
+                    d="M2 12.0322C2 11.4799 2.44772 11.0322 3 11.0322H21C21.5523 11.0322 22 11.4799 22 12.0322C22 12.5845 21.5523 13.0322 21 13.0322H3C2.44772 13.0322 2 12.5845 2 12.0322Z">
+                </path>
+                <path
+                    d="M3 17.0645C2.44772 17.0645 2 17.5122 2 18.0645C2 18.6167 2.44772 19.0645 3 19.0645H21C21.5523 19.0645 22 18.6167 22 18.0645C22 17.5122 21.5523 17.0645 21 17.0645H3Z">
+                </path>
+            </svg>
+        </div>
+
+    </div>
+</nav>
+<script>
+    document.getElementById('burgerIcon').addEventListener('click', function() {
+        document.getElementById('menu').classList.toggle('hidden')
+    });
+
+    const html = document.querySelector('html');
+</script>
+    <div class="bg-background" id="hero">
+    <div class="relative isolate px-6 pt-14 lg:px-8">
+        <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+            aria-hidden="true">
+            <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-primary to-accent opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+                style="clip-path: polygon(74.1,44.1 100,61.6 97.5,26.9 85.5,0.1 80.7,2 72.5,32.5 60.2,62.4 52.4,68.1 47.5,58.3 45.2,34.5 27.5,76.7 0.1,64.9 17.9,100 27.6,76.8 76.1,97.7 74.1,44.1"
+                fill="currentColor)">
+            </div>
+        </div>
+        <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+            <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+                <div
+                    class="text-gray-600 relative rounded-full px-3 py-1 text-sm leading-6 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                    Χάρτινες τσάντες - είδη συσκευασίας...
+                    <a href="#categories" class="font-semibold text-accent"><span class="absolute inset-0"
+                            aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
+                </div>
+            </div>
+            <div class="text-center">
+                <h1 class="text-gray-900 text-4xl font-bold tracking-tight sm:text-6xl">Η επιχείρηση μας ασχολείται με
+                    τις χάρτινες & πλαστικές τσάντες από το 1991 με ιδιαίτερη επιτυχία!</h1>
+                <p class="text-gray-600 mt-6 text-lg leading-8">
+                    <span class="underline">Είμαστε κάθετη μονάδα.</span>
+                    Κατέχουμε όλο το πακέτο της
+                    συσκευασίας. Δημιουργούμε, τυπώνουμε, κατασκευάζουμε & παράγουμε τα προιόντα για να εξυπηρετήσουμε
+                    τις ανάγκες των επιχειρήσεων.
+                </p>
+                <div class="mt-10 flex items-center justify-center gap-x-6">
+                    <a href="#contact-us"
+                        class="bg-accent rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors duration-200 ease-in-out hover:bg-primary hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Επικοινωνία</a>
+                    <a href="#about-us"
+                        class="text-gray-900 text-sm font-semibold leading-6 transition-colors duration-200 ease-in-out hover:text-accent">Για
+                        εμάς <span aria-hidden="true">→</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+            aria-hidden="true">
+            <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-accent to-secondary opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+                style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+            </div>
+        </div>
+    </div>
+</div>
+    <span class="relative flex justify-center">
+    <div
+        class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75 dark:via-background">
+    </div>
+</span>
+    <div class="bg-background" id="categories">
+    <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+        <h2 class="text-2xl font-bold tracking-tight text-gray-900">Κατηγορίες</h2>
+
+        <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+                            <div
+    class="relative block overflow-hidden rounded-lg border border-accent p-4 transition-transform hover:scale-110 sm:p-6 lg:p-8">
+    <span
+        class="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-background via-accent to-background dark:from-primary dark:via-accent dark:to-primary"></span>
+
+    <div class="mb-5 sm:flex sm:justify-between sm:gap-4">
+        <div>
+            <h3 class="text-gray-900 text-lg font-bold sm:text-xl">
+                Χάρτινες τσάντες
+            </h3>
+        </div>
+
+        <div class="hidden sm:block sm:shrink-0">
+            <img alt="Χάρτινες τσάντες" src="p1.jpg"
+                class="size-16 rounded-lg object-cover shadow-sm" />
+        </div>
+    </div>
+    <span class="relative flex justify-center">
+    <div
+        class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75 dark:via-background">
+    </div>
+</span>
+    <div class="mt-4">
+                                    <li class="text-pretty text-gray-600 text-sm">
+                    Χειροποιήτες με κορδόνι - κορδέλα - ιμάντα
+                </li>
+                            <li class="text-pretty text-gray-600 text-sm">
+                    Εκτύπωση OFFSET - Πλαστικοποιήσεις - UV - Χρυσοτυπίες
+                </li>
+                            <li class="text-pretty text-gray-600 text-sm">
+                    Οποιοδήποτε μέγεθος
+                </li>
+                            <li class="text-pretty text-gray-600 text-sm">
+                    Με Πλακέ ή Στριφτό χεράκι
+                </li>
+                            <li class="text-pretty text-gray-600 text-sm">
+                    Οικολογική
+                </li>
+                            <li class="text-pretty text-gray-600 text-sm">
+                    Οικονομική λύση σε 5 στάνταρ μεγέθη
+                </li>
+                            <li class="text-pretty text-gray-600 text-sm">
+                    Μεγάλη ποικιλία χρωμάτων - 1 ή 2 χρώματα Εκτύπωση FLEXO
+                </li>
+                    
+    </div>
+
+    
+</div>
+                            <div
+    class="relative block overflow-hidden rounded-lg border border-accent p-4 transition-transform hover:scale-110 sm:p-6 lg:p-8">
+    <span
+        class="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-background via-accent to-background dark:from-primary dark:via-accent dark:to-primary"></span>
+
+    <div class="mb-5 sm:flex sm:justify-between sm:gap-4">
+        <div>
+            <h3 class="text-gray-900 text-lg font-bold sm:text-xl">
+                Πλαστικές τσάντες
+            </h3>
+        </div>
+
+        <div class="hidden sm:block sm:shrink-0">
+            <img alt="Πλαστικές τσάντες" src="p2.jpg"
+                class="size-16 rounded-lg object-cover shadow-sm" />
+        </div>
+    </div>
+    <span class="relative flex justify-center">
+    <div
+        class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75 dark:via-background">
+    </div>
+</span>
+    <div class="mt-4">
+                                    <li class="text-pretty text-gray-600 text-sm">
+                    Όλων των τύπων με χεράκι ή χούφτα
+                </li>
+                            <li class="text-pretty text-gray-600 text-sm">
+                    Με ή χωρίς πιέτες εώς 3 χρώματα Εκτύπωση FLEXO
+                </li>
+                    
+    </div>
+
+    
+</div>
+                            <div
+    class="relative block overflow-hidden rounded-lg border border-accent p-4 transition-transform hover:scale-110 sm:p-6 lg:p-8">
+    <span
+        class="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-background via-accent to-background dark:from-primary dark:via-accent dark:to-primary"></span>
+
+    <div class="mb-5 sm:flex sm:justify-between sm:gap-4">
+        <div>
+            <h3 class="text-gray-900 text-lg font-bold sm:text-xl">
+                No Woven - Πάνινες Τσάντες &amp; Θήκες
+            </h3>
+        </div>
+
+        <div class="hidden sm:block sm:shrink-0">
+            <img alt="No Woven - Πάνινες Τσάντες &amp; Θήκες" src="p3.jpg"
+                class="size-16 rounded-lg object-cover shadow-sm" />
+        </div>
+    </div>
+    <span class="relative flex justify-center">
+    <div
+        class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75 dark:via-background">
+    </div>
+</span>
+    <div class="mt-4">
+                                    <li class="text-pretty text-gray-600 text-sm">
+                    Χειροποιήτες - γαζωτές πολλά χρώματα
+                </li>
+                            <li class="text-pretty text-gray-600 text-sm">
+                    Σε διάφορους τύπους και μεγέθη με 1 χρώμα Εκτύπωση - Μεταξοτυπία
+                </li>
+                            <li class="text-pretty text-gray-600 text-sm">
+                    Τσάντα μοναδική
+                </li>
+                            <li class="text-pretty text-gray-600 text-sm">
+                    Δεν τσαλακώνεται
+                </li>
+                            <li class="text-pretty text-gray-600 text-sm">
+                    Δεν καταστρέφεται
+                </li>
+                            <li class="text-pretty text-gray-600 text-sm">
+                    Η μόνιμη διαφήμιση της επιχείρησης σας στα χέρια του πελάτη
+                </li>
+                    
+    </div>
+
+    
+</div>
+                            <div
+    class="relative block overflow-hidden rounded-lg border border-accent p-4 transition-transform hover:scale-110 sm:p-6 lg:p-8">
+    <span
+        class="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-background via-accent to-background dark:from-primary dark:via-accent dark:to-primary"></span>
+
+    <div class="mb-5 sm:flex sm:justify-between sm:gap-4">
+        <div>
+            <h3 class="text-gray-900 text-lg font-bold sm:text-xl">
+                Public
+            </h3>
+        </div>
+
+        <div class="hidden sm:block sm:shrink-0">
+            <img alt="Public" src="p4.webp"
+                class="size-16 rounded-lg object-cover shadow-sm" />
+        </div>
+    </div>
+    <span class="relative flex justify-center">
+    <div
+        class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75 dark:via-background">
+    </div>
+</span>
+    <div class="mt-4">
+        
+    </div>
+
+    
+</div>
+                            <div
+    class="relative block overflow-hidden rounded-lg border border-accent p-4 transition-transform hover:scale-110 sm:p-6 lg:p-8">
+    <span
+        class="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-background via-accent to-background dark:from-primary dark:via-accent dark:to-primary"></span>
+
+    <div class="mb-5 sm:flex sm:justify-between sm:gap-4">
+        <div>
+            <h3 class="text-gray-900 text-lg font-bold sm:text-xl">
+                Γερμανός
+            </h3>
+        </div>
+
+        <div class="hidden sm:block sm:shrink-0">
+            <img alt="Γερμανός" src="p1.jpg"
+                class="size-16 rounded-lg object-cover shadow-sm" />
+        </div>
+    </div>
+    <span class="relative flex justify-center">
+    <div
+        class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75 dark:via-background">
+    </div>
+</span>
+    <div class="mt-4">
+        
+    </div>
+
+    
+</div>
+            
+        </div>
+    </div>
+</div>
+    <span class="relative flex justify-center">
+    <div
+        class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75 dark:via-background">
+    </div>
+</span>
+    <div class="bg-background relative isolate flex overflow-hidden py-24 sm:py-32" id="about-us">
+    <div class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
+        aria-hidden="true">
+        <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-accent to-background opacity-20 dark:from-accent dark:to-primary"
+            style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+        </div>
+    </div>
+    <div class="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu"
+        aria-hidden="true">
+        <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-background to-background opacity-20 dark:from-primary dark:to-primary"
+            style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+        </div>
+    </div>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl lg:mx-0">
+            <h2 class="text-gray-900 text-4xl font-bold tracking-tight sm:text-6xl">Είμαστε σύμβουλοι συσκευασίας</h2>
+            <p class="text-gray-600 mt-6 text-lg leading-8">Συνδυάζουμε την εταιρική εικόνα, την διαφημιστική
+                προσέγγιση, το κατάλληλο μέγεθος, την λειτουργικότητα, τα χρώματα ώστε ο ελκυστικός ο συνδυασμός να
+                αποτυπώνεται στο μυαλό του καταναλωτή & τα υλικά.</p>
+        </div>
+        <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
+            <dl class="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
+                <div class="flex flex-col-reverse">
+                    <dt class="text-gray-600 text-base leading-7">Συνεργάτες παγκοσμίως</dt>
+                    <dd class="text-gray-900 text-2xl font-bold leading-9 tracking-tight">12</dd>
+                </div>
+                <div class="flex flex-col-reverse">
+                    <dt class="text-gray-600 text-base leading-7">Προσωπικό δυναμικό</dt>
+                    <dd class="text-gray-900 text-2xl font-bold leading-9 tracking-tight">300+</dd>
+                </div>
+                <div class="flex flex-col-reverse">
+                    <dt class="text-gray-600 text-base leading-7">Ώρες άνα εβδομάδα</dt>
+                    <dd class="text-gray-900 text-2xl font-bold leading-9 tracking-tight">40+</dd>
+                </div>
+            </dl>
+        </div>
+    </div>
+    <img class="mr-auto hidden w-1/3 rounded-xl object-contain md:block" src="/aboutUsImg.png" alt="">
+</div>
+    <div class="bg-background">
+    <div
+        class="text-primary flex h-[200px] w-full items-center justify-around bg-gradient-to-r from-background/0 via-accent to-transparent text-center">
+        <div class="text-l flex flex-col items-center justify-center lg:text-xl">
+            <svg xmlns="http://www.w3.org/2000/svg"
+            width="32px" height="32px" viewBox="0 0 24 24">
+            <path
+                d="M17.601,21.938c-0.366,0-0.725-0.137-1.01-0.4l-4.251-3.904c-0.191-0.177-0.488-0.176-0.68-0.001 l-4.251,3.905c-0.444,0.41-1.063,0.515-1.618,0.271c-0.554-0.243-0.898-0.769-0.898-1.374V4.562c0-1.378,1.121-2.5,2.5-2.5h9.215 c1.379,0,2.5,1.122,2.5,2.5v15.872c0,0.605-0.345,1.131-0.898,1.374C18.011,21.895,17.805,21.938,17.601,21.938z M11.999,16.502 c0.366,0,0.732,0.132,1.018,0.396l4.251,3.904c0.225,0.206,0.471,0.121,0.54,0.09c0.07-0.031,0.3-0.155,0.3-0.458V4.562 c0-0.827-0.673-1.5-1.5-1.5H7.393c-0.827,0-1.5,0.673-1.5,1.5v15.872c0,0.303,0.229,0.427,0.3,0.458 c0.069,0.031,0.316,0.116,0.54-0.09l4.251-3.905C11.268,16.634,11.634,16.502,11.999,16.502z">
+            </path>
+        </svg>
+
+            <h5>Διάκριση στην εξυπηρέτηση πελατών</h5>
+        </div>
+        <div class="text-l flex flex-col items-center justify-center lg:text-xl">
+            <svg xmlns="http://www.w3.org/2000/svg"
+            width="32px" height="32px" viewBox="0 0 24 24">
+            <path
+                d="M14.645,2.428a8.1,8.1,0,0,0-1.61-.3,9.332,9.332,0,0,0-3.6.28l-.07.02a9.928,9.928,0,0,0,.01,19.15,9.091,9.091,0,0,0,2.36.34,1.274,1.274,0,0,0,.27.02,9.65,9.65,0,0,0,2.63-.36,9.931,9.931,0,0,0,.01-19.15Zm-.27.96a8.943,8.943,0,0,1,5.84,5.11h-4.26a13.778,13.778,0,0,0-2.74-5.35A8.254,8.254,0,0,1,14.375,3.388Zm-2.37-.09a12.78,12.78,0,0,1,2.91,5.2H9.075A12.545,12.545,0,0,1,12.005,3.3Zm3.16,6.2a13.193,13.193,0,0,1,0,5.01H8.845a12.185,12.185,0,0,1-.25-2.5,12.353,12.353,0,0,1,.25-2.51Zm-5.6-6.09.07-.02a9.152,9.152,0,0,1,1.16-.23A13.618,13.618,0,0,0,8.045,8.5H3.8A9,9,0,0,1,9.565,3.408Zm-6.5,8.6a8.71,8.71,0,0,1,.37-2.51h4.39a13.95,13.95,0,0,0-.23,2.51,13.757,13.757,0,0,0,.23,2.5H3.435A8.591,8.591,0,0,1,3.065,12.008Zm6.57,8.61a8.9,8.9,0,0,1-5.84-5.11h4.24a13.632,13.632,0,0,0,2.77,5.35A8.1,8.1,0,0,1,9.635,20.618Zm-.56-5.11h5.84a12.638,12.638,0,0,1-2.91,5.21A12.872,12.872,0,0,1,9.075,15.508Zm5.3,5.11a11.551,11.551,0,0,1-1.17.24,13.8,13.8,0,0,0,2.75-5.35h4.26A8.924,8.924,0,0,1,14.375,20.618Zm1.8-6.11a13.611,13.611,0,0,0,0-5.01h4.39a8.379,8.379,0,0,1,.37,2.51,8.687,8.687,0,0,1-.36,2.5Z">
+            </path>
+        </svg>
+
+            <h5>Υψηλή ποιότητα με εκλεκτές πρωτες ύλες</h5>
+        </div>
+        <div class="text-l flex flex-col items-center justify-center lg:text-xl">
+            <svg xmlns="http://www.w3.org/2000/svg"
+            width="32px" height="32px" viewBox="0 0 24 24">
+            <path
+                d="M16.598,20.574c-0.238,0-0.478-0.058-0.699-0.174l-3.666-1.927c-0.146-0.076-0.319-0.076-0.465,0 L8.102,20.4c-0.51,0.269-1.116,0.224-1.58-0.114c-0.465-0.338-0.694-0.9-0.597-1.467l0.7-4.082c0.028-0.162-0.026-0.328-0.144-0.442 l-2.966-2.891c-0.412-0.401-0.557-0.991-0.379-1.538c0.178-0.547,0.642-0.938,1.211-1.021L8.446,8.25 C8.608,8.226,8.75,8.124,8.822,7.976l1.833-3.714C10.91,3.746,11.425,3.426,12,3.426s1.09,0.32,1.345,0.836l1.833,3.714 c0.073,0.148,0.214,0.25,0.376,0.274l4.098,0.595c0.569,0.083,1.033,0.474,1.211,1.021c0.178,0.547,0.032,1.136-0.379,1.538 l-2.965,2.891c-0.118,0.115-0.172,0.28-0.144,0.442l0.7,4.082c0.097,0.567-0.131,1.129-0.597,1.467 C17.215,20.477,16.908,20.574,16.598,20.574z M12.698,17.588l3.666,1.927c0.173,0.091,0.37,0.077,0.526-0.038 c0.158-0.115,0.232-0.297,0.199-0.489l-0.7-4.082c-0.083-0.487,0.078-0.983,0.432-1.328l2.965-2.89 c0.14-0.136,0.187-0.328,0.127-0.513c-0.061-0.186-0.211-0.312-0.404-0.341l-4.098-0.595c-0.489-0.071-0.912-0.378-1.13-0.821 l-1.832-3.713c-0.173-0.349-0.725-0.349-0.897,0L9.719,8.418c-0.218,0.443-0.64,0.75-1.129,0.821L4.491,9.834 c-0.192,0.028-0.343,0.155-0.404,0.341c-0.06,0.185-0.013,0.376,0.127,0.513l2.965,2.891c0.354,0.344,0.515,0.84,0.431,1.327 l-0.7,4.082c-0.033,0.192,0.042,0.375,0.199,0.489c0.157,0.115,0.353,0.129,0.527,0.038l3.665-1.927 C11.739,17.357,12.261,17.357,12.698,17.588L12.698,17.588z">
+            </path>
+        </svg>
+
+            <h5>Συνεργάτες σε όλη την Ελλάδα</h5>
+        </div>
+    </div>
+</div>
+    <div class="bg-background">
+    <div class="relative isolate px-6 pt-14 lg:px-8">
+        <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+            aria-hidden="true">
+            <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-secondary to-accent opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+                style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+            </div>
+        </div>
+        <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+            aria-hidden="true">
+            <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-accent to-primary opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+                style="clip-path: polygon(74.1,44.1 100,61.6 97.5,26.9 85.5,0.1 80.7,2 72.5,32.5 60.2,62.4 52.4,68.1 47.5,58.3 45.2,34.5 27.5,76.7 0.1,64.9 17.9,100 27.6,76.8 76.1,97.7 74.1,44.1"
+                fill="currentColor)">
+            </div>
+        </div>
+        <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+            <h2 class="text-gray-900 text-2xl font-bold tracking-tight">Πελάτες</h2>
+
+            <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+                                    <a href="#" class="block text-primary">
+    <img alt="" src="p1.jpg"
+        class="h-56 w-full rounded-bl-3xl rounded-tr-3xl object-cover shadow-md sm:h-64 lg:h-72" />
+
+    <div class="mt-4 sm:flex sm:items-center sm:justify-center sm:gap-4">
+        <strong class="font-medium">Hondos Center</strong>
+
+        <span class="hidden sm:block sm:h-px sm:w-8 sm:bg-accent"></span>
+
+        <p class="mt-0.5 opacity-50 sm:mt-0">2024</p>
+    </div>
+</a>
+                                    <a href="#" class="block text-primary">
+    <img alt="" src="p2.jpg"
+        class="h-56 w-full rounded-bl-3xl rounded-tr-3xl object-cover shadow-md sm:h-64 lg:h-72" />
+
+    <div class="mt-4 sm:flex sm:items-center sm:justify-center sm:gap-4">
+        <strong class="font-medium">Χαρμάνης</strong>
+
+        <span class="hidden sm:block sm:h-px sm:w-8 sm:bg-accent"></span>
+
+        <p class="mt-0.5 opacity-50 sm:mt-0">2024</p>
+    </div>
+</a>
+                                    <a href="#" class="block text-primary">
+    <img alt="" src="p3.jpg"
+        class="h-56 w-full rounded-bl-3xl rounded-tr-3xl object-cover shadow-md sm:h-64 lg:h-72" />
+
+    <div class="mt-4 sm:flex sm:items-center sm:justify-center sm:gap-4">
+        <strong class="font-medium">Vodafone</strong>
+
+        <span class="hidden sm:block sm:h-px sm:w-8 sm:bg-accent"></span>
+
+        <p class="mt-0.5 opacity-50 sm:mt-0">2024</p>
+    </div>
+</a>
+                                    <a href="#" class="block text-primary">
+    <img alt="" src="p4.webp"
+        class="h-56 w-full rounded-bl-3xl rounded-tr-3xl object-cover shadow-md sm:h-64 lg:h-72" />
+
+    <div class="mt-4 sm:flex sm:items-center sm:justify-center sm:gap-4">
+        <strong class="font-medium">Swarswki</strong>
+
+        <span class="hidden sm:block sm:h-px sm:w-8 sm:bg-accent"></span>
+
+        <p class="mt-0.5 opacity-50 sm:mt-0">2024</p>
+    </div>
+</a>
+                                    <a href="#" class="block text-primary">
+    <img alt="" src="p1.jpg"
+        class="h-56 w-full rounded-bl-3xl rounded-tr-3xl object-cover shadow-md sm:h-64 lg:h-72" />
+
+    <div class="mt-4 sm:flex sm:items-center sm:justify-center sm:gap-4">
+        <strong class="font-medium">Rayban</strong>
+
+        <span class="hidden sm:block sm:h-px sm:w-8 sm:bg-accent"></span>
+
+        <p class="mt-0.5 opacity-50 sm:mt-0">2024</p>
+    </div>
+</a>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</div>
+    <span class="relative flex justify-center">
+    <div
+        class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75 dark:via-background">
+    </div>
+</span>
+    <section class="bg-background text-primary z-30" id="contact-us">
+
+    <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+        <h2 class="text-gray-900 mb-6 text-2xl font-bold tracking-tight">Επικοινωνία</h2>
+        <div class="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-7">
+            <div class="lg:col-span-2 lg:py-12">
+                <p class="my-3 max-w-xl text-center text-xl">
+                    Αναλαμβάνουμε τσάντες για εκθέσεις και συνέδρια
+                </p>
+                <span class="relative flex justify-center">
+    <div
+        class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75 dark:via-background">
+    </div>
+</span>
+                <p class="my-3 max-w-xl text-center text-xl">
+                    Είμαστε πολύ ευέλικτοι στις παραγγελείες από 500 - 10.000 τεμάχια
+                </p>
+                <span class="relative flex justify-center">
+    <div
+        class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75 dark:via-background">
+    </div>
+</span>
+                <p class="my-3 max-w-xl text-center text-xl">
+                    Χρησιμοποιούμε απολύτως ανακυκλώσιμα υλικά
+                </p>
+                <span class="relative flex justify-center">
+    <div
+        class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75 dark:via-background">
+    </div>
+</span>
+                <ul class="my-5 flex flex-col gap-3">
+                    <li class="max-w-xl text-lg">
+                        Μπορούμε να παραδώσουμε μέρος ή όλη την ποσότητα σε μια εβδομάδα.
+                    </li>
+                    <li class="max-w-xl text-lg">
+                        Παραδόσεις κατόπιν συνεννοήσεως.
+                    </li>
+                    <li class="max-w-xl text-lg">
+                        Παραδόση στην επιχείρηση σας ή σε πρακτορείο τηε αρεσκείας σας.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-primary rounded-lg p-8 shadow-xl lg:col-span-3 lg:p-12">
+                <form action="#" class="space-y-4">
+                    <div>
+                        <label class="sr-only" for="name">Name</label>
+                        <input class="bg-background w-full rounded-lg border-accent p-3" placeholder="Όνομα"
+                            type="text" id="name" autocomplete="cc-name" name="name" />
+                    </div>
+
+                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                        <div>
+                            <label class="sr-only" for="email">Email</label>
+                            <input class="bg-background w-full rounded-lg border-accent p-3" placeholder="Email"
+                                type="email" id="email" autocomplete="email" name="email" />
+                        </div>
+
+                        <div>
+                            <label class="sr-only" for="phone">Phone</label>
+                            <input class="bg-background w-full rounded-lg border-accent p-3" placeholder="Τηλέφωνο"
+                                type="tel" id="phone" autocomplete="tel" name="phone" />
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
+                        <div>
+                            <label for="Option1"
+                                class="has-[:checked]:border-accent has-[:checked]:bg-background has-[:checked]:text-primary text-background block w-full cursor-pointer rounded-lg border border-background p-3 hover:border-accent dark:border-[#333]"
+                                tabindex="0">
+                                <input class="sr-only" id="Option1" type="radio" tabindex="-1" name="option" />
+
+                                <span class="">Πελάτης</span>
+                            </label>
+                        </div>
+
+                        <div>
+                            <label for="Option2"
+                                class="has-[:checked]:border-accent has-[:checked]:bg-background has-[:checked]:text-primary text-background block w-full cursor-pointer rounded-lg border border-background p-3 hover:border-accent dark:border-[#333]"
+                                tabindex="0">
+                                <input class="sr-only" id="Option2" type="radio" tabindex="-1" name="option" />
+
+                                <span class="">Συνεργασία</span>
+                            </label>
+                        </div>
+
+                        <div>
+                            <label for="Option3"
+                                class="has-[:checked]:border-accent has-[:checked]:bg-background has-[:checked]:text-primary text-background block w-full cursor-pointer rounded-lg border border-background p-3 hover:border-accent dark:border-[#333]"
+                                tabindex="0">
+                                <input class="sr-only" id="Option3" type="radio" tabindex="-1" name="option" />
+
+                                <span class="">Άλλο</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="sr-only" for="message">Message</label>
+
+                        <textarea class="bg-background w-full rounded-lg border-accent p-3" placeholder="Μήνυμα" rows="8" id="message"></textarea>
+                    </div>
+
+                    <div class="mt-4">
+                        <button type="submit"
+                            class="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white hover:bg-accent hover:text-primary sm:w-auto">
+                            Αποστολή
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="lg:col-span-2 lg:py-12">
+                <p class="my-3 max-w-xl text-center text-xl">
+                    Η τσάντα αντιπροσωπεύει την ποιότητα των προϊόντων
+                </p>
+                <span class="relative flex justify-center">
+    <div
+        class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75 dark:via-background">
+    </div>
+</span>
+                <p class="my-3 max-w-xl text-center text-xl">
+                    Η τσάντα μπορεί να ανβαθμίσει την ποιότητα των προϊόντων
+                </p>
+                <span class="relative flex justify-center">
+    <div
+        class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75 dark:via-background">
+    </div>
+</span>
+                <p class="my-3 max-w-xl text-center text-xl">
+                    Η τσάντα παίζει σημαντικό επικοινωνιακό & προωθητικό ρόλο
+                </p>
+
+                <span class="relative flex justify-center">
+    <div
+        class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75 dark:via-background">
+    </div>
+</span>
+
+                <div class="mt-8 text-center">
+                    <a href="#" class="text-2xl font-bold text-accent">Επιλέξτε μας για να
+                        δημιουργήσουμε την δική σας μοναδική τσάντα για το κατάστημα σας </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <span class="relative flex justify-center">
+    <div
+        class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75 dark:via-background">
+    </div>
+</span>
+    <head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<div class="bg-background p-8 sm:p-16 lg:p-24">
+        <div class="bg-background mx-auto w-full">
+        <div
+            class="bg-background relative mx-auto block min-h-[19rem] max-w-[1250px] items-center rounded-lg shadow-xl md:flex">
+            <div id="carousel-items"
+                class="relative flex h-full w-full overflow-hidden rounded-t-lg md:w-2/5 md:rounded-l-lg md:rounded-t-none"
+                style="min-height: 19rem;">
+                                    <div class="carousel-item opacity-1 absolute inset-0"
+                        style="transition: opacity .5s ease-in-out;">
+                        <img class="absolute inset-0 h-full w-full object-cover object-center"
+                            src="http://www.raptis.test/aboutUsImg.png" alt="About Us Image">
+                        <div class="bg-accent absolute inset-0 h-full w-full opacity-75"></div>
+                        <div
+                            class="text-background absolute inset-0 flex h-full w-full items-center justify-center fill-current">
+                            <img src="/svg/logo-dark.svg" class="h-24 w-full opacity-50">
+                        </div>
+                    </div>
+                                    <div class="carousel-item opacity-0 absolute inset-0"
+                        style="transition: opacity .5s ease-in-out;">
+                        <img class="absolute inset-0 h-full w-full object-cover object-center"
+                            src="http://www.raptis.test/p1.jpg" alt="About Us Image">
+                        <div class="bg-accent absolute inset-0 h-full w-full opacity-75"></div>
+                        <div
+                            class="text-background absolute inset-0 flex h-full w-full items-center justify-center fill-current">
+                            <img src="/svg/logo-light.svg" class="h-24 w-full opacity-50">
+                        </div>
+                    </div>
+                                    <div class="carousel-item opacity-0 absolute inset-0"
+                        style="transition: opacity .5s ease-in-out;">
+                        <img class="absolute inset-0 h-full w-full object-cover object-center"
+                            src="http://www.raptis.test/p2.jpg" alt="About Us Image">
+                        <div class="bg-accent absolute inset-0 h-full w-full opacity-75"></div>
+                        <div
+                            class="text-background absolute inset-0 flex h-full w-full items-center justify-center fill-current">
+                            <img src="/svg/logo-dark.svg" class="h-24 w-full opacity-50">
+                        </div>
+                    </div>
+                                    <div class="carousel-item opacity-0 absolute inset-0"
+                        style="transition: opacity .5s ease-in-out;">
+                        <img class="absolute inset-0 h-full w-full object-cover object-center"
+                            src="http://www.raptis.test/p3.jpg" alt="About Us Image">
+                        <div class="bg-accent absolute inset-0 h-full w-full opacity-75"></div>
+                        <div
+                            class="text-background absolute inset-0 flex h-full w-full items-center justify-center fill-current">
+                            <img src="/svg/logo-light.svg" class="h-24 w-full opacity-50">
+                        </div>
+                    </div>
+                                    <div class="carousel-item opacity-0 absolute inset-0"
+                        style="transition: opacity .5s ease-in-out;">
+                        <img class="absolute inset-0 h-full w-full object-cover object-center"
+                            src="http://www.raptis.test/p4.webp" alt="About Us Image">
+                        <div class="bg-accent absolute inset-0 h-full w-full opacity-75"></div>
+                        <div
+                            class="text-background absolute inset-0 flex h-full w-full items-center justify-center fill-current">
+                            <img src="/svg/logo-dark.svg" class="h-24 w-full opacity-50">
+                        </div>
+                    </div>
+                            </div>
+            <div class="bg-background flex h-full w-full items-center rounded-lg md:w-3/5">
+                <div class="p-12 md:py-12 md:pl-16 md:pr-24">
+                    <p id="text-container" class="text-gray-600">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla sem sed lorem auctor, non ultricies justo facilisis. Suspendisse non leo nisi. Integer et justo pharetra, efficitur neque eu, aliquam felis. Aenean a turpis eu eros vulputate pharetra.
+                    </p>
+                    <a class="mt-3 flex items-baseline text-accent hover:text-accent focus:text-accent" href="#">
+                        <span>Learn more about our users</span>
+                        <span class="ml-1 text-xs">&#x279c;</span>
+                    </a>
+                </div>
+            </div>
+            <button id="prevBtn"
+                class="focus:shadow-outline text-primary absolute left-0 top-0 -ml-6 mt-32 h-12 w-12 rounded-full bg-secondary text-2xl shadow-md hover:text-accent focus:text-accent focus:outline-none">
+                <span class="block" style="transform: scale(-1);">&#x279c;</span>
+            </button>
+            <button id="nextBtn"
+                class="focus:shadow-outline text-primary absolute right-0 top-0 -mr-6 mt-32 h-12 w-12 rounded-full bg-secondary text-2xl shadow-md hover:text-accent focus:text-accent focus:outline-none">
+                <span class="block" style="transform: scale(1);">&#x279c;</span>
+            </button>
+        </div>
+        <div class="flex items-center justify-center pt-6">
+                            <button
+                    class="carousel-indicator opacity-100 size-5 bg-primary mx-3 rounded-full hover:bg-accent focus:bg-accent"
+                    data-slide-to="0">
+
+                </button>
+                            <button
+                    class="carousel-indicator opacity-50 hover:opacity-100 focus:opacity-100 size-5 bg-primary mx-3 rounded-full hover:bg-accent focus:bg-accent"
+                    data-slide-to="1">
+
+                </button>
+                            <button
+                    class="carousel-indicator opacity-50 hover:opacity-100 focus:opacity-100 size-5 bg-primary mx-3 rounded-full hover:bg-accent focus:bg-accent"
+                    data-slide-to="2">
+
+                </button>
+                            <button
+                    class="carousel-indicator opacity-50 hover:opacity-100 focus:opacity-100 size-5 bg-primary mx-3 rounded-full hover:bg-accent focus:bg-accent"
+                    data-slide-to="3">
+
+                </button>
+                            <button
+                    class="carousel-indicator opacity-50 hover:opacity-100 focus:opacity-100 size-5 bg-primary mx-3 rounded-full hover:bg-accent focus:bg-accent"
+                    data-slide-to="4">
+
+                </button>
+                    </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carouselItems = document.querySelectorAll('.carousel-item');
+            const indicators = document.querySelectorAll('.carousel-indicator');
+            const textContent = ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla sem sed lorem auctor, non ultricies justo facilisis. Suspendisse non leo nisi. Integer et justo pharetra, efficitur neque eu, aliquam felis. Aenean a turpis eu eros vulputate pharetra.","Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus malesuada, justo at fermentum cursus, eros ligula auctor velit, a sollicitudin mi magna ut velit. Donec ac ligula non lacus bibendum sodales eget ac nunc.","Cras a dolor at ligula fermentum sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi id libero vitae dui pharetra sollicitudin at et magna. Sed vel nibh orci. Maecenas varius elit a nulla volutpat suscipit.","Quisque eget nunc id felis ultricies tincidunt. Curabitur hendrerit neque sed sem luctus, id pharetra sapien tempus. Duis suscipit ante nec nisi fringilla, eget vehicula sem tincidunt. Morbi vitae eros vel metus dignissim fermentum. Nam scelerisque at mi id.","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula nulla ac lectus sagittis, et auctor sapien lobortis. Phasellus ut erat dolor. Proin suscipit euismod ligula, in varius lectus ultricies nec. Curabitur sed leo sit amet odio dictum."];
+            let currentIndex = 0;
+            const slideInterval = 3000; // 3 seconds
+            let autoSlideInterval;
+            const textContainer = document.getElementById('text-container');
+
+            function showSlide(index) {
+                carouselItems.forEach((item, i) => {
+                    item.style.opacity = i === index ? '1' : '0';
+                    indicators[i].classList.toggle('opacity-100', i === index);
+                    indicators[i].classList.toggle('opacity-50', i !== index);
+                });
+                textContainer.innerHTML = textContent[index];
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex < carouselItems.length - 1) ? currentIndex + 1 : 0;
+                showSlide(currentIndex);
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : carouselItems.length - 1;
+                showSlide(currentIndex);
+            }
+
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, slideInterval);
+            }
+
+            function stopAutoSlide() {
+                clearInterval(autoSlideInterval);
+            }
+
+            document.getElementById('prevBtn').addEventListener('click', function() {
+                prevSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            document.getElementById('nextBtn').addEventListener('click', function() {
+                nextSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', function() {
+                    currentIndex = index;
+                    showSlide(currentIndex);
+                    stopAutoSlide();
+                    startAutoSlide();
+                });
+            });
+
+            // Automatically show the first slide
+            showSlide(currentIndex);
+
+            // Set interval for auto-sliding
+            startAutoSlide();
+        });
+    </script>
+</div>
+
+</html>
+</body>
+<div class="bg-primary flex h-[200px] w-full flex-col items-end justify-end">
+    <div class="bg-primary flex h-[180px] w-full columns-3 grid-cols-3 items-center justify-center">
+        <div class="col-span-1 flex w-full items-center justify-center">
+            <p class="text-background w-fit text-sm lg:text-lg">All rights reserved.</p>
+        </div>
+        <div class="col-span-1 flex w-full justify-center dark:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="201.000000pt" height="200.000000pt" viewBox="0 0 201.000000 200.000000" preserveAspectRatio="xMidYMid meet" class="size-24 fill-background">  <g transform="translate(0.000000,200.000000) scale(0.100000,-0.100000)" fill="#ededed" stroke="none"> <path d="M70 995 l0 -945 940 0 940 0 0 169 0 169 -184 376 -185 376 -54 0 -54 0 -181 -370 c-100 -204 -182 -375 -182 -380 0 -6 47 -10 110 -10 l111 0 26 60 26 60 144 0 144 0 25 -55 c16 -37 24 -74 24 -110 l0 -55 -710 0 -710 0 0 715 0 715 710 0 710 0 1 -217 0 -218 114 -225 114 -225 0 558 1 557 -940 0 -940 0 0 -945z m1490 -241 c16 -37 30 -68 30 -70 0 -2 -27 -4 -60 -4 -33 0 -60 3 -60 8 0 10 52 132 56 132 2 0 17 -30 34 -66z"/> </g> </svg>
+        </div>
+        <div class="col-span-1 hidden w-full justify-center dark:flex">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="201.000000pt" height="200.000000pt" viewBox="0 0 201.000000 200.000000" preserveAspectRatio="xMidYMid meet" class="size-24 fill-background">  <g transform="translate(0.000000,200.000000) scale(0.100000,-0.100000)" fill="#333333" stroke="none"> <path d="M70 995 l0 -945 940 0 940 0 0 169 0 169 -184 376 -185 376 -54 0 -54 0 -181 -370 c-100 -204 -182 -375 -182 -380 0 -6 47 -10 110 -10 l111 0 26 60 26 60 144 0 144 0 25 -55 c16 -37 24 -74 24 -110 l0 -55 -710 0 -710 0 0 715 0 715 710 0 710 0 1 -217 0 -218 114 -225 114 -225 0 558 1 557 -940 0 -940 0 0 -945z m1490 -241 c16 -37 30 -68 30 -70 0 -2 -27 -4 -60 -4 -33 0 -60 3 -60 8 0 10 52 132 56 132 2 0 17 -30 34 -66z"/> </g> </svg>
+        </div>
+        <div class="text-l text-background col-span-1 w-full fill-accent pt-5 md:flex">
+            <ul class="space-x-6 md:flex">
+                <li class="flex items-center justify-center text-sm lg:text-lg"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="32px" height="32px" viewBox="0 0 24 24">
+                        <path
+                            d="M20.21,4.576a1.906,1.906,0,0,0-1.63-.35l-3.53.89a1.086,1.086,0,0,1-.44,0L9.63,3.876a2.041,2.041,0,0,0-.92,0L4.5,4.936a1.893,1.893,0,0,0-1.44,1.84v11.15a1.871,1.871,0,0,0,.73,1.5,1.906,1.906,0,0,0,1.63.35l3.53-.89a1.086,1.086,0,0,1,.44,0l4.98,1.24a2.315,2.315,0,0,0,.46.05,2.4,2.4,0,0,0,.46-.05l4.21-1.06a1.893,1.893,0,0,0,1.44-1.84V6.076A1.871,1.871,0,0,0,20.21,4.576ZM8.67,17.926l-3.49.87a.89.89,0,0,1-1.12-.87V6.776a.9.9,0,0,1,.68-.87l3.93-.99Zm5.66,1.16-4.66-1.16V4.916l4.66,1.16Zm5.61-1.86a.9.9,0,0,1-.68.87l-3.93.99V6.076l3.49-.87a.908.908,0,0,1,.78.16.886.886,0,0,1,.34.71Z">
+                        </path>
+                    </svg>Αλιμος</li>
+                <li class="flex items-center justify-center text-sm lg:text-lg"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="32px" height="32px" viewBox="0 0 24 24">
+                        <path
+                            d="M14.436,20.938c-6.268,0-11.367-5.105-11.367-11.379c0-1.996,0.521-3.953,1.504-5.659 c0.262-0.454,0.714-0.753,1.24-0.822c0.541-0.073,1.07,0.108,1.454,0.493l3.14,3.139c0.324,0.324,0.503,0.755,0.503,1.214 s-0.179,0.89-0.503,1.214l-0.296,0.296c-0.754,0.755-0.754,1.981,0,2.735l1.721,1.721c0.73,0.73,2.005,0.73,2.735,0l0.29-0.29 c0.671-0.67,1.76-0.669,2.429,0l3.139,3.139c0.384,0.384,0.563,0.915,0.492,1.455c-0.069,0.526-0.369,0.978-0.822,1.239 C18.388,20.418,16.431,20.938,14.436,20.938z M6.042,4.063c-0.033,0-0.066,0.002-0.099,0.006C5.728,4.097,5.544,4.218,5.44,4.4 C4.542,5.954,4.069,7.738,4.069,9.559c0,5.723,4.65,10.379,10.367,10.379c1.82,0,3.604-0.474,5.158-1.371 c0.183-0.105,0.303-0.289,0.331-0.503c0.03-0.23-0.046-0.455-0.208-0.618l-3.139-3.139c-0.279-0.28-0.735-0.278-1.015,0l-0.29,0.29 c-1.108,1.109-3.041,1.107-4.149,0l-1.721-1.721c-1.144-1.144-1.144-3.005,0-4.149l0.296-0.296c0.136-0.136,0.21-0.316,0.21-0.507 s-0.074-0.371-0.21-0.507l-3.14-3.14C6.421,4.138,6.236,4.063,6.042,4.063z">
+                        </path>
+                    </svg>+30 210-123-1231</li>
+                <li class="flex items-center justify-center text-sm lg:text-lg"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="32px" height="32px" viewBox="0 0 24 24">
+                        <path
+                            d="M19.435,4.065H4.565c-1.38,0-2.5,1.12-2.5,2.5v10.87c0,1.38,1.12,2.5,2.5,2.5h14.87 c1.38,0,2.5-1.12,2.5-2.5V6.565C21.935,5.185,20.815,4.065,19.435,4.065z M4.565,5.065h14.87c0.79,0,1.44,0.61,1.49,1.39 c-2.47,1.32-4.95,2.63-7.43,3.95c-0.34,0.18-0.69,0.42-1.06,0.53c-0.64,0.2-1.14-0.11-1.67-0.39c-1.42-0.75-2.84-1.51-4.25-2.26 c-1.14-0.6-2.3-1.21-3.44-1.82C3.125,5.685,3.765,5.065,4.565,5.065z M20.935,17.435c0,0.83-0.67,1.5-1.5,1.5H4.565 c-0.83,0-1.5-0.67-1.5-1.5v-9.84c2.36,1.24,4.71,2.5,7.07,3.75c0.43,0.22,0.87,0.5,1.35,0.6c0.72,0.15,1.38-0.07,2-0.41 c1.45-0.76,2.89-1.53,4.34-2.29c1.04-0.56,2.07-1.1,3.11-1.65V17.435z">
+                        </path>
+                    </svg>info@papaki.com</li>
+            </ul>
+        </div>
+    </div>
+    <p class="bg-primary mb-1 mr-10 h-[20px] text-sm opacity-50">Created and Designed by: Evangelos Sigalas</p>
+</div>
+
+
+
+</html>
