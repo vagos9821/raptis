@@ -23,6 +23,11 @@
             }
             toggleLightButton.addEventListener('click', toggleDarkMode);
             toggleDarkButton.addEventListener('click', toggleDarkMode);
+
+            const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+            if (darkModeMediaQuery.matches) {
+                htmlElement.classList.add('dark');
+            }
         });
     </script>
     <script>

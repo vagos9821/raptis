@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\File;
+use Spatie\Export\Exporter;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,8 +20,14 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot(): void
+    public function boot(Exporter $exporter): void
     {
+
+        $exporter->crawl(false);
+
+        $exporter->paths(['', 'about', 'contact', 'posts']);
+
+
         Blade::directive('svg', function ($expression) {
             // Remove quotes from the expression and split by comma
             $params = array_map('trim', explode(',', str_replace("'", "", $expression)));
