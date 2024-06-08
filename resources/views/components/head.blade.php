@@ -17,12 +17,16 @@
             const htmlElement = document.documentElement;
             const toggleLightButton = document.getElementById('toggle-light');
             const toggleDarkButton = document.getElementById('toggle-dark');
+            const toggleLightButtonMobile = document.getElementById('toggle-light-mobile');
+            const toggleDarkButtonMobile = document.getElementById('toggle-dark-mobile');
 
             function toggleDarkMode() {
                 htmlElement.classList.toggle('dark');
             }
             toggleLightButton.addEventListener('click', toggleDarkMode);
             toggleDarkButton.addEventListener('click', toggleDarkMode);
+            toggleLightButtonMobile.addEventListener('click', toggleDarkMode);
+            toggleDarkButtonMobile.addEventListener('click', toggleDarkMode);
 
             const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
             if (darkModeMediaQuery.matches) {

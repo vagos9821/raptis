@@ -21,11 +21,11 @@
             <a href="#contact-us"
                 class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">Επικοινωνία</a>
             <button id="toggle-light"
-                class="text-background absolute right-[100px] top-[20px] hidden w-fit items-center justify-center gap-3 text-xs dark:flex">
+                class="text-background absolute right-[100px] top-[20px] hidden w-fit items-center justify-center gap-3 text-xs dark:lg:flex">
                 <img src="svg/sun.svg" class="size-8"> Toggle light mode
             </button>
             <button id="toggle-dark"
-                class="text-background absolute right-[100px] top-[20px] flex w-fit items-center justify-center gap-3 text-xs dark:hidden">
+                class="text-background absolute right-[100px] top-[20px] flex w-fit items-center justify-center gap-3 text-xs lg:dark:hidden">
                 <img src="svg/moon.svg" class="size-8"> Toggle dark mode
             </button>
         </div>
@@ -42,7 +42,7 @@
                 class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">Επικοινωνία</a>
         </div>
         <div id="burgerIcon" class="lg:hidden">
-            <svg class="fill-background transition-all ease-in hover:cursor-pointer hover:fill-accent focus:fill-accent"
+            <svg class="fill-background transition-all ease-in hover:cursor-pointer hover:fill-accent focus:fill-accent dark:fill-primary"
                 width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M2 6C2 5.44772 2.44772 5 3 5H21C21.5523 5 22 5.44772 22 6C22 6.55228 21.5523 7 21 7H3C2.44772 7 2 6.55228 2 6Z">
@@ -55,7 +55,14 @@
                 </path>
             </svg>
         </div>
-
+        <button id="toggle-light-mobile"
+            class="text-background absolute right-[100px] top-[20px] flex w-fit items-center justify-center gap-3 text-xs dark:flex lg:hidden">
+            <img src="svg/sun.svg" class="size-8">
+        </button>
+        <button id="toggle-dark-mobile"
+            class="text-background absolute right-[100px] top-[20px] flex w-fit items-center justify-center gap-3 text-xs dark:hidden lg:hidden">
+            <img src="svg/moon.svg" class="size-8">
+        </button>
     </div>
 </nav>
 <script>
