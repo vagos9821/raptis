@@ -75,28 +75,35 @@ class DatabaseSeeder extends Seeder
             'image' => 'aboutUsImg.png',
             'alt_text' => 'About Us Image',
             'svg_name' => 'logo-dark',
-            'text_content' => 'Missguided is a UK-based fashion retailer that has nearly doubled in size since last year. They integrated Stripe to deliver seamless checkout across mobile and web for customers in 100+ countries, all while automatically combating fraud.'
+            'text_content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla sem sed lorem auctor, non ultricies justo facilisis. Suspendisse non leo nisi. Integer et justo pharetra, efficitur neque eu, aliquam felis. Aenean a turpis eu eros vulputate pharetra.',
         ]);
 
         CarouselItem::create([
-            'image' => 'p1.png',
+            'image' => 'p1.jpg',
             'alt_text' => 'About Us Image',
             'svg_name' => 'logo-light',
-            'text_content' => 'Missguided is a UK-based fashion retailer that has nearly doubled in size since last year. They integrated Stripe to deliver seamless checkout across mobile and web for customers in 100+ countries, all while automatically combating fraud.'
+            'text_content' => 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus malesuada, justo at fermentum cursus, eros ligula auctor velit, a sollicitudin mi magna ut velit. Donec ac ligula non lacus bibendum sodales eget ac nunc.',
         ]);
 
         CarouselItem::create([
-            'image' => 'p2.png',
+            'image' => 'p2.jpg',
             'alt_text' => 'About Us Image',
             'svg_name' => 'logo-dark',
-            'text_content' => 'Missguided is a UK-based fashion retailer that has nearly doubled in size since last year. They integrated Stripe to deliver seamless checkout across mobile and web for customers in 100+ countries, all while automatically combating fraud.'
+            'text_content' => 'Cras a dolor at ligula fermentum sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi id libero vitae dui pharetra sollicitudin at et magna. Sed vel nibh orci. Maecenas varius elit a nulla volutpat suscipit.',
         ]);
 
         CarouselItem::create([
-            'image' => 'p3.png',
+            'image' => 'p3.jpg',
             'alt_text' => 'About Us Image',
             'svg_name' => 'logo-light',
-            'text_content' => 'Missguided is a UK-based fashion retailer that has nearly doubled in size since last year. They integrated Stripe to deliver seamless checkout across mobile and web for customers in 100+ countries, all while automatically combating fraud.'
+            'text_content' => 'Quisque eget nunc id felis ultricies tincidunt. Curabitur hendrerit neque sed sem luctus, id pharetra sapien tempus. Duis suscipit ante nec nisi fringilla, eget vehicula sem tincidunt. Morbi vitae eros vel metus dignissim fermentum. Nam scelerisque at mi id.',
+        ]);
+
+        CarouselItem::create([
+            'image' => 'p4.webp',
+            'alt_text' => 'About Us Image',
+            'svg_name' => 'logo-dark',
+            'text_content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula nulla ac lectus sagittis, et auctor sapien lobortis. Phasellus ut erat dolor. Proin suscipit euismod ligula, in varius lectus ultricies nec. Curabitur sed leo sit amet odio dictum.',
         ]);
     }
 }

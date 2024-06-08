@@ -1,24 +1,45 @@
-<nav class="fixed left-0 right-0 top-3 z-20 mx-auto w-11/12 max-w-screen-xl rounded-md bg-primary shadow-lg lg:w-full">
+<nav class="bg-primary fixed left-0 right-0 top-3 z-20 mx-auto w-11/12 max-w-screen-xl rounded-md shadow-lg lg:w-full">
     <div class="flex items-center justify-between px-4 py-3 lg:px-8">
         <div>
-            @svg('nav-logo')
+            <svg version="1.0" xmlns="/www.w3.org/2000/svg" viewBox="0 0 201.000000 200.000000"
+                preserveAspectRatio="xMidYMid meet" width="50px" height="50px">
+                <g transform="translate(0.000000,200.000000) scale(0.100000,-0.100000)"
+                    class="fill-background dark:fill-primary" stroke="none">
+                    <path
+                        d="M70 995 l0 -945 940 0 940 0 0 169 0 169 -184 376 -185 376 -54 0 -54 0 -181 -370 c-100 -204 -182 -375 -182 -380 0 -6 47 -10 110 -10 l111 0 26 60 26 60 144 0 144 0 25 -55 c16 -37 24 -74 24 -110 l0 -55 -710 0 -710 0 0 715 0 715 710 0 710 0 1 -217 0 -218 114 -225 114 -225 0 558 1 557 -940 0 -940 0 0 -945z m1490 -241 c16 -37 30 -68 30 -70 0 -2 -27 -4 -60 -4 -33 0 -60 3 -60 8 0 10 52 132 56 132 2 0 17 -30 34 -66z">
+                    </path>
+                </g>
+            </svg>
         </div>
         {{-- Desktop --}}
         <div class="hidden flex-grow justify-center space-x-[100px] text-lg lg:flex">
-            <a href="#" class="nav-link transition-colors duration-200 ease-in-out hover:text-accent">Αρχική</a>
-            <a href="#about-us" class="nav-link transition-colors duration-200 ease-in-out hover:text-accent">Για εμάς</a>
+            <a href="#"
+                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">Αρχική</a>
+            <a href="#about-us"
+                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">Για
+                εμάς</a>
             <a href="#contact-us"
-                class="nav-link transition-colors duration-200 ease-in-out hover:text-accent">Επικοινωνία</a>
+                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">Επικοινωνία</a>
+            <button id="toggle-light"
+                class="text-background absolute right-[100px] top-[20px] hidden w-fit items-center justify-center gap-3 text-xs dark:flex">
+                <img src="svg/sun.svg" class="size-8"> Toggle light mode
+            </button>
+            <button id="toggle-dark"
+                class="text-background absolute right-[100px] top-[20px] flex w-fit items-center justify-center gap-3 text-xs dark:hidden">
+                <img src="svg/moon.svg" class="size-8"> Toggle dark mode
+            </button>
         </div>
 
         {{-- Mobile --}}
         <div id="menu"
-            class="absolute right-0 top-[60px] flex hidden w-fit min-w-[200px] flex-col space-y-[20px] rounded-md bg-primary p-[10px] pt-[30px] shadow-md transition-opacity lg:hidden">
-            <a href="#" class="nav-link transition-colors duration-200 ease-in-out hover:text-accent">Αρχική</a>
-            <a href="#about-us" class="nav-link transition-colors duration-200 ease-in-out hover:text-accent">Για
+            class="bg-primary absolute right-0 top-[60px] flex hidden w-fit min-w-[200px] flex-col space-y-[20px] rounded-md p-[10px] pt-[30px] shadow-md transition-opacity lg:hidden">
+            <a href="#"
+                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">Αρχική</a>
+            <a href="#about-us"
+                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">Για
                 εμάς</a>
             <a href="#contact-us"
-                class="nav-link transition-colors duration-200 ease-in-out hover:text-accent">Επικοινωνία</a>
+                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">Επικοινωνία</a>
         </div>
         <div id="burgerIcon" class="lg:hidden">
             <svg class="fill-background transition-all ease-in hover:cursor-pointer hover:fill-accent focus:fill-accent"
@@ -39,6 +60,8 @@
 </nav>
 <script>
     document.getElementById('burgerIcon').addEventListener('click', function() {
-        document.getElementById('menu').classList.toggle('hidden');
+        document.getElementById('menu').classList.toggle('hidden')
     });
+
+    const html = document.querySelector('html');
 </script>

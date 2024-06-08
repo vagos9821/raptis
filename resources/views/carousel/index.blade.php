@@ -8,9 +8,9 @@
         $carouselItems = CarouselItem::all();
 
     @endphp
-    <div class="mx-auto w-full bg-background">
+    <div class="bg-background mx-auto w-full">
         <div
-            class="relative mx-auto block min-h-[19rem] max-w-[1250px] items-center rounded-lg bg-gray-100 shadow-xl md:flex">
+            class="bg-background relative mx-auto block min-h-[19rem] max-w-[1250px] items-center rounded-lg shadow-xl md:flex">
             <div id="carousel-items"
                 class="relative flex h-full w-full overflow-hidden rounded-t-lg md:w-2/5 md:rounded-l-lg md:rounded-t-none"
                 style="min-height: 19rem;">
@@ -19,15 +19,15 @@
                         style="transition: opacity .5s ease-in-out;">
                         <img class="absolute inset-0 h-full w-full object-cover object-center"
                             src="{{ asset($item->image) }}" alt="{{ $item->alt_text }}">
-                        <div class="absolute inset-0 h-full w-full bg-accent opacity-75"></div>
+                        <div class="bg-accent absolute inset-0 h-full w-full opacity-75"></div>
                         <div
-                            class="absolute inset-0 flex h-full w-full items-center justify-center fill-current text-white">
+                            class="text-background absolute inset-0 flex h-full w-full items-center justify-center fill-current">
                             <img src="/svg/{{ $item->svg_name }}.svg" class="h-24 w-full opacity-50">
                         </div>
                     </div>
                 @endforeach
             </div>
-            <div class="flex h-full w-full items-center rounded-lg bg-gray-100 md:w-3/5">
+            <div class="bg-background flex h-full w-full items-center rounded-lg md:w-3/5">
                 <div class="p-12 md:py-12 md:pl-16 md:pr-24">
                     <p id="text-container" class="text-gray-600">
                         {{ $carouselItems->first()->text_content }}
@@ -39,20 +39,20 @@
                 </div>
             </div>
             <button id="prevBtn"
-                class="focus:shadow-outline absolute left-0 top-0 -ml-6 mt-32 h-12 w-12 rounded-full bg-white text-2xl text-accent shadow-md hover:text-indigo-400 focus:text-indigo-400 focus:outline-none">
+                class="focus:shadow-outline text-primary absolute left-0 top-0 -ml-6 mt-32 h-12 w-12 rounded-full bg-secondary text-2xl shadow-md hover:text-accent focus:text-accent focus:outline-none">
                 <span class="block" style="transform: scale(-1);">&#x279c;</span>
             </button>
             <button id="nextBtn"
-                class="focus:shadow-outline absolute right-0 top-0 -mr-6 mt-32 h-12 w-12 rounded-full bg-white text-2xl text-accent shadow-md hover:text-indigo-400 focus:text-indigo-400 focus:outline-none">
+                class="focus:shadow-outline text-primary absolute right-0 top-0 -mr-6 mt-32 h-12 w-12 rounded-full bg-secondary text-2xl shadow-md hover:text-accent focus:text-accent focus:outline-none">
                 <span class="block" style="transform: scale(1);">&#x279c;</span>
             </button>
         </div>
         <div class="flex items-center justify-center pt-6">
             @foreach ($carouselItems as $index => $item)
                 <button
-                    class="carousel-indicator {{ $index === 0 ? 'opacity-100' : 'opacity-50 hover:opacity-100 focus:opacity-100' }} px-3"
+                    class="carousel-indicator {{ $index === 0 ? 'opacity-100' : 'opacity-50 hover:opacity-100 focus:opacity-100' }} size-5 bg-primary mx-3 rounded-full hover:bg-accent focus:bg-accent"
                     data-slide-to="{{ $index }}">
-                    <div class="size-5 rounded-full bg-primary">
+
                 </button>
             @endforeach
         </div>

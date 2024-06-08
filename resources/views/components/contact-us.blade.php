@@ -1,6 +1,7 @@
-<section class="bg-background text-primary" id="contact-us">
+<section class="bg-background text-primary z-30" id="contact-us">
+
     <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-        <h2 class="mb-6 text-2xl font-bold tracking-tight text-gray-900">Επικοινωνία</h2>
+        <h2 class="text-gray-900 mb-6 text-2xl font-bold tracking-tight">Επικοινωνία</h2>
         <div class="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-7">
             <div class="lg:col-span-2 lg:py-12">
                 <p class="my-3 max-w-xl text-center text-xl">
@@ -28,56 +29,56 @@
                 </ul>
             </div>
 
-            <div class="rounded-lg bg-primary p-8 shadow-lg lg:col-span-3 lg:p-12">
+            <div class="bg-primary rounded-lg p-8 shadow-xl lg:col-span-3 lg:p-12">
                 <form action="#" class="space-y-4">
                     <div>
                         <label class="sr-only" for="name">Name</label>
-                        <input class="w-full rounded-lg border-accent bg-background p-3" placeholder="Όνομα"
-                            type="text" id="name" />
+                        <input class="bg-background w-full rounded-lg border-accent p-3" placeholder="Όνομα"
+                            type="text" id="name" autocomplete="cc-name" name="name" />
                     </div>
 
                     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                         <div>
                             <label class="sr-only" for="email">Email</label>
-                            <input class="w-full rounded-lg border-accent bg-background p-3" placeholder="Email"
-                                type="email" id="email" />
+                            <input class="bg-background w-full rounded-lg border-accent p-3" placeholder="Email"
+                                type="email" id="email" autocomplete="email" name="email" />
                         </div>
 
                         <div>
                             <label class="sr-only" for="phone">Phone</label>
-                            <input class="w-full rounded-lg border-accent bg-background p-3" placeholder="Τηλέφωνο"
-                                type="tel" id="phone" />
+                            <input class="bg-background w-full rounded-lg border-accent p-3" placeholder="Τηλέφωνο"
+                                type="tel" id="phone" autocomplete="tel" name="phone" />
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
                         <div>
                             <label for="Option1"
-                                class="has-[:checked]:border-accent has-[:checked]:bg-background has-[:checked]:text-primary block w-full cursor-pointer rounded-lg border border-background p-3 text-background hover:border-accent"
+                                class="has-[:checked]:border-accent has-[:checked]:bg-background has-[:checked]:text-primary text-background block w-full cursor-pointer rounded-lg border border-background p-3 hover:border-accent dark:border-[#333]"
                                 tabindex="0">
                                 <input class="sr-only" id="Option1" type="radio" tabindex="-1" name="option" />
 
-                                <span class="">Επιλογή 1 </span>
+                                <span class="">Πελάτης</span>
                             </label>
                         </div>
 
                         <div>
                             <label for="Option2"
-                                class="has-[:checked]:border-accent has-[:checked]:bg-background has-[:checked]:text-primary block w-full cursor-pointer rounded-lg border border-background p-3 text-background hover:border-accent"
+                                class="has-[:checked]:border-accent has-[:checked]:bg-background has-[:checked]:text-primary text-background block w-full cursor-pointer rounded-lg border border-background p-3 hover:border-accent dark:border-[#333]"
                                 tabindex="0">
                                 <input class="sr-only" id="Option2" type="radio" tabindex="-1" name="option" />
 
-                                <span class="">Επιλογή 2 </span>
+                                <span class="">Συνεργασία</span>
                             </label>
                         </div>
 
                         <div>
                             <label for="Option3"
-                                class="has-[:checked]:border-accent has-[:checked]:bg-background has-[:checked]:text-primary block w-full cursor-pointer rounded-lg border border-background p-3 text-background hover:border-accent"
+                                class="has-[:checked]:border-accent has-[:checked]:bg-background has-[:checked]:text-primary text-background block w-full cursor-pointer rounded-lg border border-background p-3 hover:border-accent dark:border-[#333]"
                                 tabindex="0">
                                 <input class="sr-only" id="Option3" type="radio" tabindex="-1" name="option" />
 
-                                <span class="">Επιλογή 3 </span>
+                                <span class="">Άλλο</span>
                             </label>
                         </div>
                     </div>
@@ -85,7 +86,7 @@
                     <div>
                         <label class="sr-only" for="message">Message</label>
 
-                        <textarea class="w-full rounded-lg border-accent bg-background p-3" placeholder="Μήνυμα" rows="8" id="message"></textarea>
+                        <textarea class="bg-background w-full rounded-lg border-accent p-3" placeholder="Μήνυμα" rows="8" id="message"></textarea>
                     </div>
 
                     <div class="mt-4">

@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+    darkMode: "class",
     content: [
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
@@ -7,6 +8,9 @@ module.exports = {
     ],
     theme: {
         extend: {
+            transitionProperty: {
+                colors: "color, background-color, border-color, text-decoration-color, fill, stroke, --tw-ring-color",
+            },
             backgroundImage: {
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
                 "gradient-conic":
@@ -31,12 +35,74 @@ module.exports = {
             },
             colors: {
                 text: "#000000",
-                background: "#ededed",
-                primary: "#333333",
+                background: {
+                    DEFAULT: "#ededed",
+                    dark: "#333333",
+                },
+                primary: {
+                    DEFAULT: "#333333",
+                    dark: "#ededed",
+                },
                 secondary: "#999999",
                 accent: "#d5ab67",
             },
         },
     },
-    plugins: [],
+    plugins: [
+        function ({ addBase, theme }) {
+            addBase({
+                body: {
+                    backgroundColor: theme("colors.background.DEFAULT"),
+                    color: theme("colors.gray.900"),
+                },
+                "body.dark": {
+                    backgroundColor: theme("colors.background.dark"),
+                    color: theme("colors.gray.100"),
+                },
+                ".bg-background": {
+                    backgroundColor: theme("colors.background.DEFAULT"),
+                },
+                ".dark .bg-background": {
+                    backgroundColor: theme("colors.background.dark"),
+                },
+                ".bg-primary": {
+                    backgroundColor: theme("colors.primary.DEFAULT"),
+                },
+                ".dark .bg-primary": {
+                    backgroundColor: theme("colors.primary.dark"),
+                },
+                ".bg-accent": {
+                    backgroundColor: theme("colors.accent.DEFAULT"),
+                },
+                ".dark .bg-accent": {
+                    backgroundColor: theme("colors.accent.dark"),
+                },
+                ".text-background": {
+                    color: theme("colors.background.DEFAULT"),
+                },
+                ".dark .text-background": {
+                    color: theme("colors.background.dark"),
+                },
+                ".text-primary": {
+                    color: theme("colors.primary.DEFAULT"),
+                },
+                ".dark .text-primary": {
+                    color: theme("colors.primary.dark"),
+                },
+                ".text-gray-900": {
+                    color: theme("colors.gray-900.DEFAULT"),
+                },
+                ".dark .text-gray-900": {
+                    color: theme("colors.primary.dark"),
+                },
+                ".text-gray-600": {
+                    color: theme("colors.gray-600.DEFAULT"),
+                },
+                ".dark .text-gray-600": {
+                    color: theme("colors.primary.dark"),
+                    opacity: 0.75,
+                },
+            });
+        },
+    ],
 };
