@@ -32,7 +32,7 @@
                     <p id="text-container" class="text-gray-600">
                         {{ $carouselItems->first()->text_content }}
                     </p>
-                    <a class="mt-3 flex items-baseline text-accent hover:text-accent focus:text-accent" href="#">
+                    <a class="mt-3 flex items-baseline text-accent hover:text-accent focus:text-accent" href="#clients">
                         <span>Learn more about our users</span>
                         <span class="ml-1 text-xs">&#x279c;</span>
                     </a>

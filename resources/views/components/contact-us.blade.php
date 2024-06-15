@@ -30,7 +30,7 @@
             </div>
 
             <div class="bg-primary rounded-lg p-8 shadow-xl lg:col-span-3 lg:p-12">
-                <form action="#" class="space-y-4">
+                <form action="" class="space-y-4">
                     <div>
                         <label class="sr-only" for="name">Name</label>
                         <input class="bg-background w-full rounded-lg border-accent p-3" placeholder="Όνομα"
@@ -113,8 +113,8 @@
                 @include('components.divider')
 
                 <div class="mt-8 text-center">
-                    <a href="#" class="text-2xl font-bold text-accent">Επιλέξτε μας για να
-                        δημιουργήσουμε την δική σας μοναδική τσάντα για το κατάστημα σας </a>
+                    <p class="text-2xl font-bold text-accent">Επιλέξτε μας για να
+                        δημιουργήσουμε την δική σας μοναδική τσάντα για το κατάστημα σας </p>
                 </div>
             </div>
         </div>
