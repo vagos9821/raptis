@@ -37,6 +37,18 @@
                 class="text-background absolute right-[100px] top-[20px] flex w-fit items-center justify-center gap-3 text-xs lg:dark:hidden">
                 <img src="svg/moon.svg" class="size-8"> Toggle dark mode
             </button>
+            {{-- Toggle language --}}
+            @if (app()->getLocale() == 'en')
+                <a href="{{ '/' . 'el' }}"
+                    class="size-12 bg-red absolute right-[25px] top-[15px] z-50 block rounded-lg px-4 py-2 text-center text-lg text-accent">
+                    {{ __('en') }}
+                </a>
+            @else
+                <a href="{{ '/' . 'en' }}"
+                    class="size-12 bg-red absolute right-[25px] top-[15px] z-50 block rounded-lg px-4 py-2 text-center text-lg text-accent">
+                    {{ __('el') }}
+                </a>
+            @endif
         </div>
 
         {{-- -- Mobile -- --}}
@@ -55,6 +67,18 @@
                 class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
                 {{ __('Επικοινωνία') }}
             </a>
+            {{-- Toggle language --}}
+            @if (app()->getLocale() == 'en')
+                <a href="{{ '/' . 'el' }}"
+                    class="size-12 bg-red absolute right-[25px] top-[85px] z-50 block rounded-lg px-4 py-2 text-center text-lg text-accent">
+                    {{ __('en') }}
+                </a>
+            @else
+                <a href="{{ '/' . 'en' }}"
+                    class="size-12 bg-red absolute right-[25px] top-[85px] z-50 block rounded-lg px-4 py-2 text-center text-lg text-accent">
+                    {{ __('el') }}
+                </a>
+            @endif
         </div>
         {{-- Burger icon --}}
         <div id="burgerIcon" class="lg:hidden">
@@ -82,19 +106,6 @@
         </button>
     </div>
 </nav>
-
-{{-- Toggle language --}}
-@if (app()->getLocale() == 'en')
-    <a href="{{ '/' . 'el' }}"
-        class="size-12 bg-red fixed right-52 top-[25px] z-50 block rounded-lg px-4 py-2 text-center text-lg text-accent">
-        {{ __('en') }}
-    </a>
-@else
-    <a href="{{ '/' . 'en' }}"
-        class="size-12 bg-red fixed right-52 top-[25px] z-50 block rounded-lg px-4 py-2 text-center text-lg text-accent">
-        {{ __('el') }}
-    </a>
-@endif
 {{-- Burger menu script --}}
 <script>
     document.getElementById('burgerIcon').addEventListener('click', function() {

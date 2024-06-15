@@ -5,11 +5,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="#">
     <title>{{ __('e-Bags - ΡΑΠΤΗΣ ΛΕΩΝΙΔΑΣ') }}</title>
     <meta name="description" content="Raptis Packing">
     @vite('resources/css/app.css')
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <link rel="canonical" href="http://raptis.test/" />
+    <link rel="alternate" hreflang="x-default" href="http://raptis.test/" />
+    <link rel="alternate" hreflang="el" href="http://raptis.test/el/" />
+    <link rel="alternate" hreflang="en" href="http://raptis.test/en/" />
 
     {{-- Dark mode button script --}}
     <script>
