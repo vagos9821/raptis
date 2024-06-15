@@ -17,29 +17,6 @@
     <link rel="alternate" hreflang="el" href="http://raptis.test/el/" />
     <link rel="alternate" hreflang="en" href="http://raptis.test/en/" />
 
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const htmlElement = document.documentElement;
-            const toggleLightButton = document.getElementById('toggle-light');
-            const toggleDarkButton = document.getElementById('toggle-dark');
-            const toggleLightButtonMobile = document.getElementById('toggle-light-mobile');
-            const toggleDarkButtonMobile = document.getElementById('toggle-dark-mobile');
-
-            function toggleDarkMode() {
-                htmlElement.classList.toggle('dark');
-            }
-            toggleLightButton.addEventListener('click', toggleDarkMode);
-            toggleDarkButton.addEventListener('click', toggleDarkMode);
-            toggleLightButtonMobile.addEventListener('click', toggleDarkMode);
-            toggleDarkButtonMobile.addEventListener('click', toggleDarkMode);
-
-            const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-            if (darkModeMediaQuery.matches) {
-                htmlElement.classList.add('dark');
-            }
-        });
-    </script>
 </head>
 
 <body class="bg-[#ededed] text-[#333333]">
@@ -81,7 +58,7 @@
                 <img src="public/svg/moon.svg" class="size-8"> Toggle dark mode
             </button>
             
-                            <a href="/en"
+                            <a href=""
                     class="size-12 bg-red absolute right-[25px] top-[15px] z-50 block rounded-lg px-4 py-2 text-center text-lg text-[#d5ab67]">
                     el
                 </a>
@@ -104,7 +81,7 @@
                 Επικοινωνία
             </a>
             
-                            <a href="/en"
+                            <a href=""
                     class="size-12 bg-red absolute right-[25px] top-[85px] z-50 block rounded-lg px-4 py-2 text-center text-lg text-[#d5ab67]">
                     el
                 </a>
