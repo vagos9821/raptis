@@ -1,5 +1,6 @@
 <nav class="bg-primary fixed left-0 right-0 top-3 z-20 mx-auto w-11/12 max-w-screen-xl rounded-md shadow-lg lg:w-full">
     <div class="flex items-center justify-between px-4 py-3 lg:px-8">
+        {{-- Logo --}}
         <a href="/">
             <svg version="1.0" xmlns="/www.w3.org/2000/svg" viewBox="0 0 201.000000 200.000000"
                 preserveAspectRatio="xMidYMid meet" width="50px" height="50px">
@@ -11,15 +12,23 @@
                 </g>
             </svg>
         </a>
-        {{-- Desktop --}}
+
+        {{-- -- Desktop -- --}}
         <div class="hidden flex-grow justify-center space-x-[100px] text-lg lg:flex">
+            {{-- Destinations --}}
             <a href="/"
-                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">Αρχική</a>
+                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
+                Αρχική
+            </a>
             <a href="#about-us"
-                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">Για
-                εμάς</a>
+                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
+                Για εμάς
+            </a>
             <a href="#contact-us"
-                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">Επικοινωνία</a>
+                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
+                Επικοινωνία
+            </a>
+            {{-- Toggle light and dark mode --}}
             <button id="toggle-light"
                 class="text-background absolute right-[100px] top-[20px] hidden w-fit items-center justify-center gap-3 text-xs dark:lg:flex">
                 <img src="svg/sun.svg" class="size-8"> Toggle light mode
@@ -30,17 +39,24 @@
             </button>
         </div>
 
-        {{-- Mobile --}}
+        {{-- -- Mobile -- --}}
         <div id="menu"
             class="bg-primary absolute right-0 top-[60px] flex hidden w-fit min-w-[200px] flex-col space-y-[20px] rounded-md p-[10px] pt-[30px] shadow-md transition-opacity lg:hidden">
+            {{-- Destinations --}}
             <a href="/"
-                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">Αρχική</a>
+                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
+                Αρχική
+            </a>
             <a href="#about-us"
-                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">Για
-                εμάς</a>
+                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
+                Για εμάς
+            </a>
             <a href="#contact-us"
-                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">Επικοινωνία</a>
+                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
+                Επικοινωνία
+            </a>
         </div>
+        {{-- Burger icon --}}
         <div id="burgerIcon" class="lg:hidden">
             <svg class="fill-background transition-all ease-in hover:cursor-pointer hover:fill-accent focus:fill-accent dark:fill-primary"
                 width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -55,6 +71,7 @@
                 </path>
             </svg>
         </div>
+        {{-- Toggle light and dark mode --}}
         <button id="toggle-light-mobile"
             class="text-background absolute right-[100px] top-[20px] flex w-fit items-center justify-center gap-3 text-xs dark:flex lg:hidden dark:lg:hidden">
             <img src="svg/sun.svg" class="size-8">
@@ -65,6 +82,8 @@
         </button>
     </div>
 </nav>
+
+{{-- Burger menu script --}}
 <script>
     document.getElementById('burgerIcon').addEventListener('click', function() {
         document.getElementById('menu').classList.toggle('hidden')

@@ -1,7 +1,9 @@
 <div class="bg-background" id="categories">
     <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+        {{-- Categories title --}}
         <h2 class="text-primary mb-[50px] text-[40px] font-bold tracking-tight">Προϊόντα</h2>
 
+        {{-- Category cards --}}
         <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
             @foreach ($categories as $category)
                 @include('components.items.categories-card', ['category' => $category])
@@ -10,7 +12,7 @@
     </div>
 </div>
 
-<!-- Modal -->
+{{-- Category modal --}}
 <div id="categoryModal" class="fixed inset-0 z-50 flex hidden items-center justify-center">
     <div id='modalOverlay' class="bg-accent absolute inset-0 opacity-50"></div>
     <div class="bg-background transform overflow-hidden rounded-lg shadow-xl transition-all sm:w-full sm:max-w-4xl">
@@ -38,6 +40,7 @@
     </div>
 </div>
 
+{{-- Category modal script --}}
 <script>
     function showCategoryModal(img, name, desc) {
         document.getElementById('modalImg').src = img;

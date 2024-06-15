@@ -1,3 +1,4 @@
+{{-- Accent stripe --}}
 <div class="bg-background">
     <div
         class="text-primary flex h-[200px] w-full items-center justify-around bg-gradient-to-r from-background/0 via-accent to-transparent text-center">

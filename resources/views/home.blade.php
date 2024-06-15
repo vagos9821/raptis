@@ -1,4 +1,6 @@
+{{-- Html start, head and body start --}}
 @extends('layout')
+{{-- Content of body --}}
 @section('content')
     @include('components.navbar')
     @include('components.hero')
@@ -12,4 +14,5 @@
     @include('components.contact-us')
     @include('components.divider')
     @include('carousel.index')
+    {{-- Body end, footer and html end --}}
 @endsection
