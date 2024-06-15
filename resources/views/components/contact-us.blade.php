@@ -1,7 +1,7 @@
 <section class="bg-background text-primary z-30" id="contact-us">
 
     <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-        <h2 class="text-gray-900 mb-6 text-2xl font-bold tracking-tight">Επικοινωνία</h2>
+        <h2 class="text-gray-900 mb-[50px] text-[40px] font-bold tracking-tight">Επικοινωνία</h2>
         <div class="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-7">
             <div class="lg:col-span-2 lg:py-12">
                 <p class="my-3 max-w-xl text-center text-xl">

@@ -56,7 +56,7 @@
             </svg>
         </div>
         <button id="toggle-light-mobile"
-            class="text-background absolute right-[100px] top-[20px] flex w-fit items-center justify-center gap-3 text-xs dark:flex lg:hidden">
+            class="text-background absolute right-[100px] top-[20px] flex w-fit items-center justify-center gap-3 text-xs dark:flex lg:hidden dark:lg:hidden">
             <img src="svg/sun.svg" class="size-8">
         </button>
         <button id="toggle-dark-mobile"

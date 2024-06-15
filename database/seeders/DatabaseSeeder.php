@@ -35,13 +35,13 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Category::create([
-            'name' => 'Public',
+            'name' => 'Κουτιά - Αυτοκόλλητα - Κάρτες',
             'img' => 'p4.webp',
             'desc' => [],
         ]);
 
         Category::create([
-            'name' => 'Γερμανός',
+            'name' => 'Κορδέλες Τυπωμένες - Έντυπα',
             'img' => 'p1.jpg',
             'desc' => [],
         ]);
@@ -59,11 +59,6 @@ class DatabaseSeeder extends Seeder
         Client::create([
             'name' => 'Vodafone',
             'img' => 'p3.jpg',
-        ]);
-
-        Client::create([
-            'name' => 'Swarswki',
-            'img' => 'p4.webp',
         ]);
 
         Client::create([
