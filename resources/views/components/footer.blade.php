@@ -11,7 +11,7 @@
         <!-- Left side: Rights reserved -->
         <div class="mb-5 flex w-full items-center justify-center md:mb-0 md:w-1/3">
             <p class="text-background text-sm lg:text-lg">
-                All rights reserved.
+                {{ __('All rights reserved.') }}
             </p>
         </div>
 
@@ -29,13 +29,13 @@
         <div class="text-background flex w-full items-center justify-center text-sm md:w-1/3 lg:text-lg">
             <ul class="flex flex-col space-x-6 md:flex-row md:items-center md:justify-center">
                 <li class="mb-2 flex items-center justify-start md:mb-0">
-                    @svg('map', 'size-8') Ευφράτου 8 Βύρωνας 16232
+                    @svg('map', 'size-8 fill-accent') {{ __('Ευφράτου 8 Βύρωνας 16232') }}
                 </li>
                 <li class="mb-2 flex items-center justify-start md:mb-0">
-                    @svg('phone', 'size-8') +30 210 76 23 600
+                    @svg('phone', 'size-8 fill-accent') +30 210 76 23 600
                 </li>
                 <li class="flex items-center justify-start">
-                    @svg('mail', 'size-8') ebags@otenet.gr
+                    @svg('mail', 'size-8 fill-accent') ebags@otenet.gr
                 </li>
             </ul>
         </div>
@@ -44,7 +44,7 @@
     <!-- Designed by -->
     <div class="bg-primary flex w-full justify-center py-1">
         <p class="text-background text-sm opacity-50">
-            Created and Designed by: Evangelos Sigalas
+            {{ __('Created and Designed by: Vangelis Sigalas') }}
         </p>
     </div>
 </footer>

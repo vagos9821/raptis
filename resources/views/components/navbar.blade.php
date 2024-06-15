@@ -18,15 +18,15 @@
             {{-- Destinations --}}
             <a href="/"
                 class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
-                Αρχική
+                {{ __('Αρχική') }}
             </a>
             <a href="#about-us"
                 class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
-                Για εμάς
+                {{ __('Για εμάς') }}
             </a>
             <a href="#contact-us"
                 class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
-                Επικοινωνία
+                {{ __('Επικοινωνία') }}
             </a>
             {{-- Toggle light and dark mode --}}
             <button id="toggle-light"
@@ -45,15 +45,15 @@
             {{-- Destinations --}}
             <a href="/"
                 class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
-                Αρχική
+                {{ __('Αρχική') }}
             </a>
             <a href="#about-us"
                 class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
-                Για εμάς
+                {{ __('Για εμάς') }}
             </a>
             <a href="#contact-us"
                 class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
-                Επικοινωνία
+                {{ __('Επικοινωνία') }}
             </a>
         </div>
         {{-- Burger icon --}}
@@ -83,6 +83,18 @@
     </div>
 </nav>
 
+{{-- Toggle language --}}
+@if (app()->getLocale() == 'en')
+    <a href="{{ '/' . 'el' }}"
+        class="size-12 bg-red fixed right-52 top-[25px] z-50 block rounded-lg px-4 py-2 text-center text-lg text-accent">
+        {{ __('en') }}
+    </a>
+@else
+    <a href="{{ '/' . 'en' }}"
+        class="size-12 bg-red fixed right-52 top-[25px] z-50 block rounded-lg px-4 py-2 text-center text-lg text-accent">
+        {{ __('el') }}
+    </a>
+@endif
 {{-- Burger menu script --}}
 <script>
     document.getElementById('burgerIcon').addEventListener('click', function() {

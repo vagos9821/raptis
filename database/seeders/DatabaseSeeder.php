@@ -19,20 +19,66 @@ class DatabaseSeeder extends Seeder
         Category::create([
             'name' => 'Χάρτινες τσάντες',
             'img' => 'p1.jpg',
-            'desc' => ['Χειροποιήτες με κορδόνι - κορδέλα - ιμάντα', 'Εκτύπωση OFFSET - Πλαστικοποιήσεις - UV - Χρυσοτυπίες', 'Οποιοδήποτε μέγεθος', 'Με Πλακέ ή Στριφτό χεράκι', 'Οικολογική', 'Οικονομική λύση σε 5 στάνταρ μεγέθη', 'Μεγάλη ποικιλία χρωμάτων - 1 ή 2 χρώματα Εκτύπωση FLEXO'],
+            'desc' => [
+                'el' => [
+                    'Χειροποιήτες με κορδόνι - κορδέλα - ιμάντα',
+                    'Εκτύπωση OFFSET - Πλαστικοποιήσεις - UV - Χρυσοτυπίες',
+                    'Οποιοδήποτε μέγεθος',
+                    'Με Πλακέ ή Στριφτό χεράκι',
+                    'Οικολογική',
+                    'Οικονομική λύση σε 5 στάνταρ μεγέθη',
+                    'Μεγάλη ποικιλία χρωμάτων - 1 ή 2 χρώματα Εκτύπωση FLEXO',
+                ],
+                'en' => [
+                    'Handmade with cord - ribbon - strap',
+                    'OFFSET printing - Lamination - UV - Gold stamping',
+                    'Any size',
+                    'With flat or twisted handle',
+                    'Eco-friendly',
+                    'Economical solution in 5 standard sizes',
+                    'Wide range of colors - 1 or 2 color FLEXO printing',
+                ],
+            ],
         ]);
 
         Category::create([
             'name' => 'Πλαστικές τσάντες',
             'img' => 'p2.jpg',
-            'desc' => ['Όλων των τύπων με χεράκι ή χούφτα', 'Με ή χωρίς πιέτες εώς 3 χρώματα Εκτύπωση FLEXO'],
+            'desc' => [
+                'el' => [
+                    'Όλων των τύπων με χεράκι ή χούφτα',
+                    'Με ή χωρίς πιέτες εώς 3 χρώματα Εκτύπωση FLEXO',
+                ],
+                'en' => [
+                    'All types with handle or grip',
+                    'With or without pleats up to 3 colors FLEXO printing',
+                ],
+            ],
         ]);
 
         Category::create([
             'name' => 'No Woven - Πάνινες Τσάντες & Θήκες',
             'img' => 'p3.jpg',
-            'desc' => ['Χειροποιήτες - γαζωτές πολλά χρώματα', 'Σε διάφορους τύπους και μεγέθη με 1 χρώμα Εκτύπωση - Μεταξοτυπία', 'Τσάντα μοναδική', 'Δεν τσαλακώνεται', 'Δεν καταστρέφεται', 'Η μόνιμη διαφήμιση της επιχείρησης σας στα χέρια του πελάτη'],
+            'desc' => [
+                'el' => [
+                    'Χειροποιήτες - γαζωτές πολλά χρώματα',
+                    'Σε διάφορους τύπους και μεγέθη με 1 χρώμα Εκτύπωση - Μεταξοτυπία',
+                    'Τσάντα μοναδική',
+                    'Δεν τσαλακώνεται',
+                    'Δεν καταστρέφεται',
+                    'Η μόνιμη διαφήμιση της επιχείρησης σας στα χέρια του πελάτη',
+                ],
+                'en' => [
+                    'Handcrafted - stitched in many colors',
+                    'In various types and sizes with 1-color printing - silkscreen',
+                    'Unique bag',
+                    'Does not wrinkle',
+                    'Not destroyed',
+                    'The permanent advertising of your business in the hands of the customer',
+                ],
+            ],
         ]);
+
 
         Category::create([
             'name' => 'Κουτιά - Αυτοκόλλητα - Κάρτες',

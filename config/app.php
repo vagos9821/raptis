@@ -86,6 +86,20 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Available locales
+    |--------------------------------------------------------------------------
+    |
+    | List all locales that your application works with
+    |
+    */
+
+    'available_locales' => [
+        'English' => 'en',
+        'Greek' => 'el',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Encryption Key
     |--------------------------------------------------------------------------
     |
@@ -101,7 +115,7 @@ return [
 
     'previous_keys' => [
         ...array_filter(
-            explode(',', env('APP_PREVIOUS_KEYS', ''))
+            explode(',', env('APP_PREVIOUS_KEYS', '')),
         ),
     ],
 

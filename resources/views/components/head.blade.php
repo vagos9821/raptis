@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html lang="en" class="">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
-    <title>e-Bags - ΡΑΠΤΗΣ ΛΕΩΝΙΔΑΣ</title>
+    <title>{{ __('e-Bags - ΡΑΠΤΗΣ ΛΕΩΝΙΔΑΣ') }}</title>
     <meta name="description" content="Raptis Packing">
     @vite('resources/css/app.css')
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>

@@ -20,13 +20,11 @@
             <div class="mx-auto max-w-2xl lg:mx-0">
                 {{-- About us title --}}
                 <h2 class="text-gray-900 mb-[50px] text-4xl font-bold tracking-tight sm:text-6xl">
-                    Είμαστε σύμβουλοι συσκευασίας
+                    {{ __('Είμαστε σύμβουλοι συσκευασίας') }}
                 </h2>
                 {{-- About us description --}}
                 <p class="text-gray-600 mt-6 text-lg leading-8">
-                    Συνδυάζουμε την εταιρική εικόνα, την διαφημιστική προσέγγιση, το κατάλληλο μέγεθος, την
-                    λειτουργικότητα, τα χρώματα ώστε ο ελκυστικός ο συνδυασμός να αποτυπώνεται στο μυαλό του καταναλωτή
-                    & τα υλικά.
+                    {{ __('Συνδυάζουμε την εταιρική εικόνα, την διαφημιστική προσέγγιση, το κατάλληλο μέγεθος, την λειτουργικότητα, τα χρώματα ώστε ο ελκυστικός ο συνδυασμός να αποτυπώνεται στο μυαλό του καταναλωτή & τα υλικά.') }}
                 </p>
             </div>
 
@@ -34,15 +32,15 @@
             <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
                 <dl class="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
                     <div class="flex flex-col-reverse">
-                        <dt class="text-gray-600 text-base leading-7">Συνεργάτες παγκοσμίως</dt>
+                        <dt class="text-gray-600 text-base leading-7">{{ __('Συνεργάτες παγκοσμίως') }}</dt>
                         <dd class="text-gray-900 text-2xl font-bold leading-9 tracking-tight">12</dd>
                     </div>
                     <div class="flex flex-col-reverse">
-                        <dt class="text-gray-600 text-base leading-7">Προσωπικό δυναμικό</dt>
+                        <dt class="text-gray-600 text-base leading-7">{{ __('Προσωπικό δυναμικό') }}</dt>
                         <dd class="text-gray-900 text-2xl font-bold leading-9 tracking-tight">300+</dd>
                     </div>
                     <div class="flex flex-col-reverse">
-                        <dt class="text-gray-600 text-base leading-7">Ώρες άνα εβδομάδα</dt>
+                        <dt class="text-gray-600 text-base leading-7">{{ __('Ώρες άνα εβδομάδα') }}</dt>
                         <dd class="text-gray-900 text-2xl font-bold leading-9 tracking-tight">40+</dd>
                     </div>
                 </dl>

@@ -1,15 +1,28 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CategoriesController;
-use App\Http\Controllers\ClientsController;
-use App\Http\Controllers\CarouselController;
+use App\Http\Controllers\LocaleController;
+use App\Models\Client;
+use App\Models\Category;
 
 
-Route::get('/', function () {
-    $clients = App\Models\Client::all();
-    $categories = App\Models\Category::all();
+Route::get('/{locale}', function ($locale = null) {
+    $clients = Client::all();
+    $categories = Category::all();
+
+    if (isset($locale) && in_array($locale, config('app.available_locales'))) {
+        app()->setLocale($locale);
+    }
+
     return view('home', compact('clients', 'categories'));
 });
 
-Route::get('/carousel', [CarouselController::class, 'index']);
+Route::get('/', function () {
+    $clients = Client::all();
+    $categories = Category::all();
+
+    App::setLocale('el');
+
+    return view('home', compact('clients', 'categories'));
+});

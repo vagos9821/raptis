@@ -14,10 +14,10 @@
                 {{-- Small desktop text --}}
                 <div
                     class="text-gray-600 relative rounded-full px-3 py-1 text-sm leading-6 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                    Χάρτινες τσάντες - είδη συσκευασίας...
+                    {{ __('Χάρτινες τσάντες - είδη συσκευασίας...') }}
                     <a href="#categories" class="font-semibold text-accent">
                         <span class="absolute inset-0" aria-hidden="true"></span>
-                        Read more
+                        {{ __('Read more') }}
                         <span aria-hidden="true">&rarr;</span>
                     </a>
                 </div>
@@ -25,23 +25,22 @@
             <div class="text-center">
                 {{-- Big text --}}
                 <h1 class="text-gray-900 text-4xl font-bold tracking-tight sm:text-6xl">
-                    Η επιχείρηση μας ασχολείται με τις χάρτινες & πλαστικές τσάντες από το 1991 με ιδιαίτερη επιτυχία!
+                    {{ __('Η επιχείρηση μας ασχολείται με τις χάρτινες & πλαστικές τσάντες από το 1991 με ιδιαίτερη επιτυχία!') }}
                 </h1>
                 {{-- Small text --}}
                 <p class="text-gray-600 mt-6 text-lg leading-8">
-                    <span class="underline">Είμαστε κάθετη μονάδα.</span>
-                    Κατέχουμε όλο το πακέτο της συσκευασίας. Δημιουργούμε, τυπώνουμε, κατασκευάζουμε & παράγουμε τα
-                    προιόντα για να εξυπηρετήσουμε τις ανάγκες των επιχειρήσεων.
+                    <span class="underline">{{ __('Είμαστε κάθετη μονάδα.') }}</span>
+                    {{ __('Κατέχουμε όλο το πακέτο της συσκευασίας. Δημιουργούμε, τυπώνουμε, κατασκευάζουμε & παράγουμε τα προιόντα για να εξυπηρετήσουμε τις ανάγκες των επιχειρήσεων.') }}
                 </p>
                 {{-- Buttons --}}
                 <div class="mt-10 flex items-center justify-center gap-x-6">
                     <a href="#contact-us"
                         class="bg-accent rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors duration-200 ease-in-out hover:bg-primary hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
-                        Επικοινωνία
+                        {{ __('Επικοινωνία') }}
                     </a>
                     <a href="#about-us"
                         class="text-gray-900 text-sm font-semibold leading-6 transition-colors duration-200 ease-in-out hover:text-accent">
-                        Για εμάς
+                        {{ __('Για εμάς') }}
                         <span aria-hidden="true">→</span>
                     </a>
                 </div>
