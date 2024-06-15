@@ -1,38 +1,54 @@
-{{-- End of body --}}
+<!-- End of body -->
 </body>
 
-{{-- Footer --}}
-<div class="bg-primary flex h-[200px] w-full flex-col items-end justify-end">
-    <div class="bg-primary flex h-[180px] w-full columns-3 grid-cols-3 items-center justify-center">
-        {{-- Left side --}}
-        <div class="col-span-1 flex w-full items-center justify-center">
-            <p class="text-background w-fit text-sm lg:text-lg">All rights reserved.</p>
+<!-- Footer -->
+<footer class="bg-primary flex h-fit w-full flex-col items-end justify-end">
+
+    <!-- Footer main content -->
+    <div
+        class="bg-primary flex h-auto w-full flex-col items-center justify-center py-5 md:h-[180px] md:flex-row md:py-0">
+
+        <!-- Left side: Rights reserved -->
+        <div class="mb-5 flex w-full items-center justify-center md:mb-0 md:w-1/3">
+            <p class="text-background text-sm lg:text-lg">
+                All rights reserved.
+            </p>
         </div>
-        {{-- Center, Logo --}}
-        <div class="col-span-1 flex w-full justify-center dark:hidden">
-            @svg('logo-light', 'size-24 fill-background')
+
+        <!-- Center: Logo -->
+        <div class="mb-5 flex w-full justify-center md:mb-0 md:w-1/3">
+            <div class="dark:hidden">
+                @svg('logo-light', 'size-24 fill-background')
+            </div>
+            <div class="hidden dark:flex">
+                @svg('logo-dark', 'size-24 fill-background')
+            </div>
         </div>
-        <div class="col-span-1 hidden w-full justify-center dark:flex">
-            @svg('logo-dark', 'size-24 fill-background')
-        </div>
-        {{-- Right side, Contact info --}}
-        <div class="text-l text-background col-span-1 w-full fill-accent pt-5 md:flex">
-            <ul class="space-x-6 md:flex">
-                <li class="flex items-center justify-center text-sm lg:text-lg">
-                    @svg('map', 'size-8') ΑΕυφράτου 8 Βύρωνας 16232
+
+        <!-- Right side: Contact info -->
+        <div class="text-background flex w-full items-center justify-center text-sm md:w-1/3 lg:text-lg">
+            <ul class="flex flex-col space-x-6 md:flex-row md:items-center md:justify-center">
+                <li class="mb-2 flex items-center justify-start md:mb-0">
+                    @svg('map', 'size-8') Ευφράτου 8 Βύρωνας 16232
                 </li>
-                <li class="flex items-center justify-center text-sm lg:text-lg">
+                <li class="mb-2 flex items-center justify-start md:mb-0">
                     @svg('phone', 'size-8') +30 210 76 23 600
                 </li>
-                <li class="flex items-center justify-center text-sm lg:text-lg">
+                <li class="flex items-center justify-start">
                     @svg('mail', 'size-8') ebags@otenet.gr
                 </li>
             </ul>
         </div>
     </div>
-    {{-- Designed by --}}
-    <p class="bg-primary mb-1 mr-10 h-[20px] text-sm opacity-50">Created and Designed by: Evangelos Sigalas</p>
-</div>
-{{-- End of Html --}}
+
+    <!-- Designed by -->
+    <div class="bg-primary flex w-full justify-center py-1">
+        <p class="text-background text-sm opacity-50">
+            Created and Designed by: Evangelos Sigalas
+        </p>
+    </div>
+</footer>
+
+<!-- End of Html -->
 
 </html>
