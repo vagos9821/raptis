@@ -1,5 +1,5 @@
 <div class="bg-background" id="hero">
-    <div class="relative isolate px-6 pt-14 lg:px-8">
+    <div class="relative isolate flex h-[100vh] items-center justify-center px-6 lg:px-8 lg:pt-14">
         {{-- Background effect start --}}
         <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
             aria-hidden="true">
@@ -9,7 +9,7 @@
             </div>
         </div>
         {{-- Hero text --}}
-        <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+        <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:max-w-6xl lg:py-56">
             <div class="hidden sm:mb-8 sm:flex sm:justify-center">
                 {{-- Small desktop text --}}
                 <div
@@ -24,7 +24,7 @@
             </div>
             <div class="text-center">
                 {{-- Big text --}}
-                <h1 class="text-gray-900 text-4xl font-bold tracking-tight sm:text-6xl">
+                <h1 class="text-gray-900 text-2xl font-bold tracking-tight sm:text-2xl lg:text-8xl">
                     {{ __('Η επιχείρηση μας ασχολείται με τις χάρτινες & πλαστικές τσάντες από το 1991 με ιδιαίτερη επιτυχία!') }}
                 </h1>
                 {{-- Small text --}}

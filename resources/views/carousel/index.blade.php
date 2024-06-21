@@ -17,12 +17,12 @@
                     <div class="carousel-item {{ $index === 0 ? 'opacity-1' : 'opacity-0' }} absolute inset-0"
                         style="transition: opacity .5s ease-in-out;">
                         {{-- Carousel image --}}
-                        <img class="absolute inset-0 h-full w-full object-cover object-center"
-                            src="{{ asset($item->image) }}" alt="{{ $item->alt_text }}">
                         <div class="bg-accent absolute inset-0 h-full w-full opacity-75"></div>
+                        <img class="absolute inset-0 h-full w-full object-contain object-center"
+                            src="{{ asset($item->image) }}" alt="{{ $item->alt_text }}">
                         {{-- Carousel svg --}}
                         <div
-                            class="text-background absolute inset-0 flex h-full w-full items-center justify-center fill-current">
+                            class="text-background absolute -inset-x-1/3 flex h-full w-full items-end justify-end fill-current">
                             <img src="/svg/{{ $item->svg_name }}.svg" class="h-24 w-full opacity-50">
                         </div>
                     </div>

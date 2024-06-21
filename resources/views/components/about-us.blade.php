@@ -49,6 +49,6 @@
 
         {{-- About us image --}}
         <img class="mr-auto hidden w-1/3 max-w-[1000px] rounded-xl object-contain shadow-xl md:block"
-            src="/aboutUsImg.png" alt="">
+            src="/raptis_photos/DSC_0027.JPG" alt="">
     </div>
 </div>

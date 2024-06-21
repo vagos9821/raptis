@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
 
         Category::create([
             'name' => 'Χάρτινες τσάντες',
-            'img' => 'p1.jpg',
+            'img' => '/raptis_photos/La_Pupa.png',
             'desc' => [
                 'el' => [
                     'Χειροποιήτες με κορδόνι - κορδέλα - ιμάντα',
@@ -43,7 +43,7 @@ class DatabaseSeeder extends Seeder
 
         Category::create([
             'name' => 'Πλαστικές τσάντες',
-            'img' => 'p2.jpg',
+            'img' => '/raptis_photos/Cappuccini.png',
             'desc' => [
                 'el' => [
                     'Όλων των τύπων με χεράκι ή χούφτα',
@@ -58,7 +58,7 @@ class DatabaseSeeder extends Seeder
 
         Category::create([
             'name' => 'No Woven - Πάνινες Τσάντες & Θήκες',
-            'img' => 'p3.jpg',
+            'img' => '/raptis_photos/La_Pupa.png',
             'desc' => [
                 'el' => [
                     'Χειροποιήτες - γαζωτές πολλά χρώματα',
@@ -82,14 +82,48 @@ class DatabaseSeeder extends Seeder
 
         Category::create([
             'name' => 'Κουτιά - Αυτοκόλλητα - Κάρτες',
-            'img' => 'p4.webp',
-            'desc' => [],
+            'img' => '/raptis_photos/Cappuccini.png',
+            'desc' => [
+                'el' => [
+                    'Χειροποιήτες - γαζωτές πολλά χρώματα',
+                    'Σε διάφορους τύπους και μεγέθη με 1 χρώμα Εκτύπωση - Μεταξοτυπία',
+                    'Τσάντα μοναδική',
+                    'Δεν τσαλακώνεται',
+                    'Δεν καταστρέφεται',
+                    'Η μόνιμη διαφήμιση της επιχείρησης σας στα χέρια του πελάτη',
+                ],
+                'en' => [
+                    'Handcrafted - stitched in many colors',
+                    'In various types and sizes with 1-color printing - silkscreen',
+                    'Unique bag',
+                    'Does not wrinkle',
+                    'Not destroyed',
+                    'The permanent advertising of your business in the hands of the customer',
+                ],
+            ],
         ]);
 
         Category::create([
             'name' => 'Κορδέλες Τυπωμένες - Έντυπα',
-            'img' => 'p1.jpg',
-            'desc' => [],
+            'img' => '/raptis_photos/La_Pupa.png',
+            'desc' => [
+                'el' => [
+                    'Χειροποιήτες - γαζωτές πολλά χρώματα',
+                    'Σε διάφορους τύπους και μεγέθη με 1 χρώμα Εκτύπωση - Μεταξοτυπία',
+                    'Τσάντα μοναδική',
+                    'Δεν τσαλακώνεται',
+                    'Δεν καταστρέφεται',
+                    'Η μόνιμη διαφήμιση της επιχείρησης σας στα χέρια του πελάτη',
+                ],
+                'en' => [
+                    'Handcrafted - stitched in many colors',
+                    'In various types and sizes with 1-color printing - silkscreen',
+                    'Unique bag',
+                    'Does not wrinkle',
+                    'Not destroyed',
+                    'The permanent advertising of your business in the hands of the customer',
+                ],
+            ],
         ]);
 
         Client::create([
@@ -113,35 +147,35 @@ class DatabaseSeeder extends Seeder
         ]);
 
         CarouselItem::create([
-            'image' => 'aboutUsImg.png',
+            'image' => '/raptis_photos/DSC_0015.JPG',
             'alt_text' => 'About Us Image',
             'svg_name' => 'logo-dark',
             'text_content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla sem sed lorem auctor, non ultricies justo facilisis. Suspendisse non leo nisi. Integer et justo pharetra, efficitur neque eu, aliquam felis. Aenean a turpis eu eros vulputate pharetra.',
         ]);
 
         CarouselItem::create([
-            'image' => 'p1.jpg',
+            'image' => '/raptis_photos/DSC_0103.JPG',
             'alt_text' => 'About Us Image',
             'svg_name' => 'logo-light',
             'text_content' => 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus malesuada, justo at fermentum cursus, eros ligula auctor velit, a sollicitudin mi magna ut velit. Donec ac ligula non lacus bibendum sodales eget ac nunc.',
         ]);
 
         CarouselItem::create([
-            'image' => 'p2.jpg',
+            'image' => '/raptis_photos/DSC_0095.JPG',
             'alt_text' => 'About Us Image',
             'svg_name' => 'logo-dark',
             'text_content' => 'Cras a dolor at ligula fermentum sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi id libero vitae dui pharetra sollicitudin at et magna. Sed vel nibh orci. Maecenas varius elit a nulla volutpat suscipit.',
         ]);
 
         CarouselItem::create([
-            'image' => 'p3.jpg',
+            'image' => '/raptis_photos/DSC_0319.JPG',
             'alt_text' => 'About Us Image',
             'svg_name' => 'logo-light',
             'text_content' => 'Quisque eget nunc id felis ultricies tincidunt. Curabitur hendrerit neque sed sem luctus, id pharetra sapien tempus. Duis suscipit ante nec nisi fringilla, eget vehicula sem tincidunt. Morbi vitae eros vel metus dignissim fermentum. Nam scelerisque at mi id.',
         ]);
 
         CarouselItem::create([
-            'image' => 'p4.webp',
+            'image' => '/raptis_photos/DSC_0036.JPG',
             'alt_text' => 'About Us Image',
             'svg_name' => 'logo-dark',
             'text_content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula nulla ac lectus sagittis, et auctor sapien lobortis. Phasellus ut erat dolor. Proin suscipit euismod ligula, in varius lectus ultricies nec. Curabitur sed leo sit amet odio dictum.',

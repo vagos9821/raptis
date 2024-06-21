@@ -8,6 +8,21 @@ module.exports = {
     ],
     theme: {
         extend: {
+            keyframes: {
+                "slide-in-left": {
+                    "0%": {
+                        transform: "translateX(-100%)",
+                        opacity: "0",
+                    },
+                    "100%": {
+                        transform: "translateX(0)",
+                        opacity: "1",
+                    },
+                },
+            },
+            animation: {
+                "slide-in-left": "slide-in-left 1s ease-out forwards",
+            },
             transitionProperty: {
                 colors: "color, background-color, border-color, text-decoration-color, fill, stroke, --tw-ring-color",
             },

@@ -5,11 +5,12 @@
     @include('components.navbar')
     @include('components.hero')
     @include('components.divider')
-    @include('components.categories')
-    @include('components.divider')
+    @include('components.products')
+    {{-- @include('components.categories') --}}
+    {{-- @include('components.divider') --}}
     @include('components.about-us')
     @include('components.stripe')
-    @include('components.clients')
+    {{-- @include('components.clients') --}}
     @include('components.divider')
     @include('components.contact-us')
     @include('components.divider')
