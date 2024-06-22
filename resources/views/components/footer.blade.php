@@ -43,7 +43,7 @@
 
     <!-- Designed by -->
     <div class="bg-primary flex w-full justify-center py-1">
-        <p class="text-background text-sm opacity-50">
+        <p class="text-background text-sm">
             {{ __('Created and Designed by: Vangelis Sigalas') }}
         </p>
     </div>

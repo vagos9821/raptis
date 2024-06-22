@@ -8,15 +8,17 @@
     <link rel="shortcut icon" type="image/x-icon" href="#">
     <title>{{ __('e-Bags - ΡΑΠΤΗΣ ΛΕΩΝΙΔΑΣ') }}</title>
     <meta name="description" content="Raptis Packing">
+    <meta name="theme-color" content="#d5ab67" />
     @vite('resources/css/app.css')
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-    <link rel="canonical" href="http://raptis.test/" />
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js" defer type="module"></script>
+    <link rel="manifest" href="{{ asset('manifest.json') }}">
+    <link rel="canonical" href="{{ url()->current() }}" />
     <link rel="alternate" hreflang="x-default" href="http://raptis.test/" />
     <link rel="alternate" hreflang="el" href="http://raptis.test/el/" />
     <link rel="alternate" hreflang="en" href="http://raptis.test/en/" />
 
     {{-- Dark mode button script --}}
-    <script>
+    <script defer type="module">
         document.addEventListener('DOMContentLoaded', function() {
             const htmlElement = document.documentElement;
             const toggleLightButton = document.getElementById('toggle-light');

@@ -30,7 +30,7 @@
             </div>
         </div>
         {{-- About us image --}}
-        <img class="mt-12 w-full max-w-[500px] rounded-xl object-contain shadow-xl md:mt-0 md:w-1/2"
+        <img loading="lazy" class="mt-12 w-full max-w-[500px] rounded-xl object-contain shadow-xl md:mt-0 md:w-1/2"
             src="/raptis_photos/Optimized/Shortcuts.png" alt="">
     </div>
 </div>
@@ -42,7 +42,7 @@
     {{-- About us content --}}
     <div class="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 md:flex-row lg:px-8">
         {{-- About us image --}}
-        <img class="w-full max-w-[500px] rounded-xl object-contain shadow-xl md:order-last md:w-1/2"
+        <img loading="lazy" class="w-full max-w-[500px] rounded-xl object-contain shadow-xl md:order-last md:w-1/2"
             src="/raptis_photos/Optimized/Bonjour.png" alt="">
         <div class="mx-auto max-w-2xl md:ml-8 md:w-1/2 lg:mx-0">
             {{-- About us title --}}

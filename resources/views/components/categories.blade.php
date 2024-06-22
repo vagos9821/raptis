@@ -20,7 +20,8 @@
             <div class="sm:flex sm:items-center">
                 <div
                     class="lg:size-96 size-24 bg-background mx-auto flex flex-shrink-0 items-center justify-center rounded-full sm:mx-0">
-                    <img id="modalImg" alt="Category Image" class="lg:size-96 size-24 rounded-full object-cover">
+                    <img loading="lazy" id="modalImg" alt="Category Image"
+                        class="lg:size-96 size-24 rounded-full object-cover">
                 </div>
                 <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
                     <h3 id="modalTitle"
@@ -34,7 +35,7 @@
             </div>
         </div>
         <div class="bg-background px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-            <button id="closeModal" type="button"
+            <button id="closeModal" type="button" aria-label="Close modal"
                 class="focus:accent bg-accent text-primary inline-flex w-full justify-center rounded-md border border-transparent px-4 py-2 text-base font-medium shadow-sm hover:bg-primary hover:text-accent focus:outline-none sm:ml-3 sm:w-auto sm:text-sm">
                 Close
             </button>
@@ -43,7 +44,7 @@
 </div>
 
 {{-- Category modal script --}}
-<script>
+<script defer type="module">
     function showCategoryModal(img, name, desc) {
         document.getElementById('modalImg').src = img;
         document.getElementById('modalTitle').textContent = name;

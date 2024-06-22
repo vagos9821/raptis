@@ -1,7 +1,7 @@
 <nav class="bg-primary fixed left-0 right-0 top-3 z-20 mx-auto w-11/12 max-w-screen-xl rounded-md shadow-lg lg:w-full">
     <div class="flex items-center justify-between px-4 py-3 lg:px-8">
         {{-- Logo --}}
-        <a href={{ '/' . app()->getLocale() }}>
+        <a href={{ '/' . app()->getLocale() }} aria-label="Home">
             <svg version="1.0" xmlns="/www.w3.org/2000/svg" viewBox="0 0 201.000000 200.000000"
                 preserveAspectRatio="xMidYMid meet" width="50px" height="50px">
                 <g transform="translate(0.000000,200.000000) scale(0.100000,-0.100000)"
@@ -29,13 +29,13 @@
                 {{ __('Για εμάς') }}
             </a>
             {{-- Toggle light and dark mode --}}
-            <button id="toggle-light"
+            <button aria-label="Toggle light mode" id="toggle-light"
                 class="text-background absolute right-[100px] top-[20px] hidden w-fit items-center justify-center gap-3 text-xs dark:lg:flex">
-                <img src="svg/sun.svg" class="size-8"> Toggle light mode
+                <img loading="lazy" src="{{ asset('svg/sun.svg') }}" class="size-8" alt="svg"> Toggle light mode
             </button>
-            <button id="toggle-dark"
+            <button aria-label="Toggle dark mode" id="toggle-dark"
                 class="text-background absolute right-[100px] top-[20px] flex w-fit items-center justify-center gap-3 text-xs lg:dark:hidden">
-                <img src="svg/moon.svg" class="size-8"> Toggle dark mode
+                <img loading="lazy" src="{{ asset('svg/moon.svg') }}" class="size-8" alt="svg"> Toggle dark mode
             </button>
             {{-- Toggle language --}}
             @if (app()->getLocale() == 'en')
@@ -96,18 +96,18 @@
             </svg>
         </div>
         {{-- Toggle light and dark mode --}}
-        <button id="toggle-light-mobile"
+        <button aria-label="Toggle light mode" id="toggle-light-mobile"
             class="text-background absolute right-[100px] top-[20px] flex w-fit items-center justify-center gap-3 text-xs dark:flex lg:hidden dark:lg:hidden">
-            <img src="svg/sun.svg" class="size-8">
+            <img loading="lazy" src="{{ asset('svg/sun.svg') }}" class="size-8" alt="svg">
         </button>
-        <button id="toggle-dark-mobile"
+        <button aria-label="Toggle dark mode"id="toggle-dark-mobile"
             class="text-background absolute right-[100px] top-[20px] flex w-fit items-center justify-center gap-3 text-xs dark:hidden lg:hidden">
-            <img src="svg/moon.svg" class="size-8">
+            <img loading="lazy" src="{{ asset('svg/moon.svg') }}" class="size-8" alt="svg">
         </button>
     </div>
 </nav>
 {{-- Burger menu script --}}
-<script>
+<script type="module">
     document.getElementById('burgerIcon').addEventListener('click', function() {
         document.getElementById('menu').classList.toggle('hidden')
     });

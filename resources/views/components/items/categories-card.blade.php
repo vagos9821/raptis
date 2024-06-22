@@ -17,7 +17,7 @@
 
         {{-- Category image --}}
         <div class="flex items-center justify-center sm:shrink-0">
-            <img alt="{{ __($category->name) }}" src="{{ $category->img }}"
+            <img loading="lazy" alt="{{ __($category->name) }}" src="{{ $category->img }}"
                 class="size-52 rounded-lg object-cover shadow-sm" />
         </div>
     </div>

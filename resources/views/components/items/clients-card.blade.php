@@ -1,6 +1,6 @@
 <a href="#clients" class="text-primary block">
     {{-- Client image --}}
-    <img alt="" src="{{ $clients->img }}"
+    <img loading="lazy" alt="" src="{{ $clients->img }}"
         class="h-56 w-full rounded-bl-3xl rounded-tr-3xl object-cover shadow-md sm:h-64 lg:h-72" />
 
     {{-- Client details --}}

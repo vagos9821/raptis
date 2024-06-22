@@ -8,17 +8,17 @@
                 <div class="carousel-item-products {{ $index === 0 ? 'opacity-1' : 'opacity-0' }} absolute inset-0"
                     style="transition: opacity .5s ease-in-out;">
                     {{-- Carousel image --}}
-                    <img class="absolute inset-0 h-full object-center" src="{{ asset($item) }}"
+                    <img loading="lazy" class="absolute inset-0 h-full w-full object-center" src="{{ asset($item) }}"
                         alt="{{ $product->name }}">
                 </div>
             @endforeach
         </div>
         {{-- Carousel buttons --}}
-        <button id="{{ $prevBtnId }}"
+        <button id="{{ $prevBtnId }}" aria-label="Previous item"
             class="focus:shadow-outline bg-accent text-primary absolute left-0 top-0 -ml-6 mt-32 h-12 w-12 rounded-full text-2xl shadow-md hover:text-secondary focus:text-secondary focus:outline-none">
             <span class="block" style="transform: scale(-1);">&#x279c;</span>
         </button>
-        <button id="{{ $nextBtnId }}"
+        <button id="{{ $nextBtnId }}" aria-label="Next item"
             class="focus:shadow-outline bg-accent text-primary absolute right-0 top-0 -mr-6 mt-32 h-12 w-12 rounded-full text-2xl shadow-md hover:text-secondary focus:text-secondary focus:outline-none">
             <span class="block" style="transform: scale(1);">&#x279c;</span>
         </button>
@@ -26,7 +26,7 @@
     {{-- Carousel dot indicators --}}
     <div class="flex items-center justify-center">
         @foreach ($product->img as $index => $item)
-            <button
+            <button aria-label="Slide {{ $index + 1 }}"
                 class="carousel-indicator-products {{ $index === 0 ? 'opacity-100' : 'opacity-50 hover:opacity-100 focus:opacity-100' }} size-2 bg-primary mx-3 rounded-full hover:bg-accent focus:bg-accent"
                 data-slide-to="{{ $index }}">
             </button>
@@ -34,7 +34,8 @@
     </div>
 </div>
 
-<script>
+{{-- Products Carousel script --}}
+<script defer type="module">
     document.addEventListener('DOMContentLoaded', function() {
         const carouselItems = document.querySelectorAll('#{{ $carouselId }} .carousel-item-products');
         const indicators = document.querySelectorAll('#{{ $carouselId }} .carousel-indicator-products');

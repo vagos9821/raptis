@@ -18,12 +18,13 @@
                         style="transition: opacity .5s ease-in-out;">
                         {{-- Carousel image --}}
                         <div class="bg-accent absolute inset-0 h-full w-full opacity-75"></div>
-                        <img class="absolute inset-0 h-full w-full object-contain object-center"
+                        <img loading="lazy" class="absolute inset-0 h-full w-full object-contain object-center"
                             src="{{ asset($item->image) }}" alt="{{ $item->alt_text }}">
                         {{-- Carousel svg --}}
                         <div
                             class="text-background absolute -inset-x-1/3 flex h-full w-full items-end justify-end fill-current">
-                            <img src="/svg/{{ $item->svg_name }}.svg" class="h-24 w-full opacity-50">
+                            <img loading="lazy" src="/svg/{{ $item->svg_name }}.svg" class="h-24 w-full opacity-50"
+                                alt="{{ $item->alt_text }}">
                         </div>
                     </div>
                 @endforeach
@@ -42,11 +43,11 @@
                 </div>
             </div>
             {{-- Carousel buttons --}}
-            <button id="prevBtn"
+            <button id="prevBtn" aria-label="Previous item"
                 class="focus:shadow-outline text-primary absolute left-0 top-0 -ml-6 mt-32 h-12 w-12 rounded-full bg-secondary text-2xl shadow-md hover:text-accent focus:text-accent focus:outline-none">
                 <span class="block" style="transform: scale(-1);">&#x279c;</span>
             </button>
-            <button id="nextBtn"
+            <button id="nextBtn" aria-label="Next item"
                 class="focus:shadow-outline text-primary absolute right-0 top-0 -mr-6 mt-32 h-12 w-12 rounded-full bg-secondary text-2xl shadow-md hover:text-accent focus:text-accent focus:outline-none">
                 <span class="block" style="transform: scale(1);">&#x279c;</span>
             </button>
@@ -54,7 +55,7 @@
         {{-- Carousel dot indicators --}}
         <div class="flex items-center justify-center pt-6">
             @foreach ($carouselItems as $index => $item)
-                <button
+                <button aria-label="Slide {{ $index + 1 }}"
                     class="carousel-indicator {{ $index === 0 ? 'opacity-100' : 'opacity-50 hover:opacity-100 focus:opacity-100' }} size-5 bg-primary mx-3 rounded-full hover:bg-accent focus:bg-accent"
                     data-slide-to="{{ $index }}">
 
@@ -64,7 +65,7 @@
     </div>
 
     {{-- Carousel script --}}
-    <script>
+    <script defer>
         document.addEventListener('DOMContentLoaded', function() {
             const carouselItems = document.querySelectorAll('.carousel-item');
             const indicators = document.querySelectorAll('.carousel-indicator');

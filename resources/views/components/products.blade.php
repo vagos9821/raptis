@@ -70,8 +70,8 @@
     @endforeach
 
 </div>
-
-<script>
+{{-- Products Scroll Sliding Effect --}}
+<script defer type="module">
     document.addEventListener('DOMContentLoaded', function() {
         const slidingDivs = document.querySelectorAll('.slidingDiv');
         const slidingDivsRight = document.querySelectorAll('.slidingDivRight');

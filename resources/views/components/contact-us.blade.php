@@ -97,7 +97,7 @@
                     </div>
                     {{-- Send Button --}}
                     <div class="mt-4">
-                        <button type="submit"
+                        <button type="submit" aria-label="Send message"
                             class="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white hover:bg-accent hover:text-primary sm:w-auto">
                             {{ __('Αποστολή') }}
                         </button>

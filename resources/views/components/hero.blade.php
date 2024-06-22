@@ -35,7 +35,7 @@
                 {{-- Buttons --}}
                 <div class="mt-10 flex flex-col items-center justify-center gap-6 gap-x-6 lg:flex-row">
                     <a href="#contact-us"
-                        class="bg-accent rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors duration-200 ease-in-out hover:bg-primary hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+                        class="bg-accent text-background rounded-md px-3.5 py-2.5 text-sm font-semibold shadow-sm transition-colors duration-200 ease-in-out hover:bg-primary hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
                         {{ __('Επικοινωνία') }}
                     </a>
                     <a href={{ '/' . App::getLocale() . '/about-us' }}
