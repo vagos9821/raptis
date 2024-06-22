@@ -8,7 +8,7 @@
     @include('components.products')
     {{-- @include('components.categories') --}}
     {{-- @include('components.divider') --}}
-    @include('components.about-us')
+    {{-- @include('components.about-us') --}}
     @include('components.stripe')
     {{-- @include('components.clients') --}}
     @include('components.divider')

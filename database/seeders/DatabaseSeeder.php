@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
 
         Category::create([
             'name' => 'Χάρτινες τσάντες',
-            'img' => '/raptis_photos/La_Pupa.png',
+            'img' => '/raptis_photos/Optimized/La_Pupa.png',
             'desc' => [
                 'el' => [
                     'Χειροποιήτες με κορδόνι - κορδέλα - ιμάντα',
@@ -43,7 +43,7 @@ class DatabaseSeeder extends Seeder
 
         Category::create([
             'name' => 'Πλαστικές τσάντες',
-            'img' => '/raptis_photos/Cappuccini.png',
+            'img' => '/raptis_photos/Optimized/Cappuccini.png',
             'desc' => [
                 'el' => [
                     'Όλων των τύπων με χεράκι ή χούφτα',
@@ -58,7 +58,7 @@ class DatabaseSeeder extends Seeder
 
         Category::create([
             'name' => 'No Woven - Πάνινες Τσάντες & Θήκες',
-            'img' => '/raptis_photos/La_Pupa.png',
+            'img' => '/raptis_photos/Optimized/Jordan.png',
             'desc' => [
                 'el' => [
                     'Χειροποιήτες - γαζωτές πολλά χρώματα',
@@ -82,7 +82,7 @@ class DatabaseSeeder extends Seeder
 
         Category::create([
             'name' => 'Κουτιά - Αυτοκόλλητα - Κάρτες',
-            'img' => '/raptis_photos/Cappuccini.png',
+            'img' => '/raptis_photos/Optimized/Panellinios_Agora_games.png',
             'desc' => [
                 'el' => [
                     'Χειροποιήτες - γαζωτές πολλά χρώματα',
@@ -105,7 +105,7 @@ class DatabaseSeeder extends Seeder
 
         Category::create([
             'name' => 'Κορδέλες Τυπωμένες - Έντυπα',
-            'img' => '/raptis_photos/La_Pupa.png',
+            'img' => '/raptis_photos/Optimized/Shortcuts.png',
             'desc' => [
                 'el' => [
                     'Χειροποιήτες - γαζωτές πολλά χρώματα',
@@ -147,35 +147,35 @@ class DatabaseSeeder extends Seeder
         ]);
 
         CarouselItem::create([
-            'image' => '/raptis_photos/DSC_0015.JPG',
+            'image' => '/raptis_photos/Optimized/Bonjour.png',
             'alt_text' => 'About Us Image',
             'svg_name' => 'logo-dark',
             'text_content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla sem sed lorem auctor, non ultricies justo facilisis. Suspendisse non leo nisi. Integer et justo pharetra, efficitur neque eu, aliquam felis. Aenean a turpis eu eros vulputate pharetra.',
         ]);
 
         CarouselItem::create([
-            'image' => '/raptis_photos/DSC_0103.JPG',
+            'image' => '/raptis_photos/Optimized/No_Way.png',
             'alt_text' => 'About Us Image',
             'svg_name' => 'logo-light',
             'text_content' => 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus malesuada, justo at fermentum cursus, eros ligula auctor velit, a sollicitudin mi magna ut velit. Donec ac ligula non lacus bibendum sodales eget ac nunc.',
         ]);
 
         CarouselItem::create([
-            'image' => '/raptis_photos/DSC_0095.JPG',
+            'image' => '/raptis_photos/Optimized/Panellinios_Agora_games.png',
             'alt_text' => 'About Us Image',
             'svg_name' => 'logo-dark',
             'text_content' => 'Cras a dolor at ligula fermentum sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi id libero vitae dui pharetra sollicitudin at et magna. Sed vel nibh orci. Maecenas varius elit a nulla volutpat suscipit.',
         ]);
 
         CarouselItem::create([
-            'image' => '/raptis_photos/DSC_0319.JPG',
+            'image' => '/raptis_photos/Optimized/Jordan.png',
             'alt_text' => 'About Us Image',
             'svg_name' => 'logo-light',
             'text_content' => 'Quisque eget nunc id felis ultricies tincidunt. Curabitur hendrerit neque sed sem luctus, id pharetra sapien tempus. Duis suscipit ante nec nisi fringilla, eget vehicula sem tincidunt. Morbi vitae eros vel metus dignissim fermentum. Nam scelerisque at mi id.',
         ]);
 
         CarouselItem::create([
-            'image' => '/raptis_photos/DSC_0036.JPG',
+            'image' => '/raptis_photos/Optimized/La_Pupa.png',
             'alt_text' => 'About Us Image',
             'svg_name' => 'logo-dark',
             'text_content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula nulla ac lectus sagittis, et auctor sapien lobortis. Phasellus ut erat dolor. Proin suscipit euismod ligula, in varius lectus ultricies nec. Curabitur sed leo sit amet odio dictum.',

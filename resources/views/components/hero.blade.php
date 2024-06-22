@@ -1,5 +1,5 @@
 <div class="bg-background" id="hero">
-    <div class="relative isolate flex h-[100vh] items-center justify-center px-6 lg:px-8 lg:pt-14">
+    <div class="mx-w-[1440px] relative isolate flex h-[100vh] items-center justify-center px-6 lg:px-8 lg:pt-14">
         {{-- Background effect start --}}
         <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
             aria-hidden="true">
@@ -24,7 +24,7 @@
             </div>
             <div class="text-center">
                 {{-- Big text --}}
-                <h1 class="text-gray-900 text-2xl font-bold tracking-tight sm:text-2xl lg:text-8xl">
+                <h1 class="text-gray-900 text-2xl font-bold tracking-tight sm:text-2xl lg:text-6xl 2xl:text-8xl">
                     {{ __('Η επιχείρηση μας ασχολείται με τις χάρτινες & πλαστικές τσάντες από το 1991 με ιδιαίτερη επιτυχία!') }}
                 </h1>
                 {{-- Small text --}}
@@ -33,7 +33,7 @@
                     {{ __('Κατέχουμε όλο το πακέτο της συσκευασίας. Δημιουργούμε, τυπώνουμε, κατασκευάζουμε & παράγουμε τα προιόντα για να εξυπηρετήσουμε τις ανάγκες των επιχειρήσεων.') }}
                 </p>
                 {{-- Buttons --}}
-                <div class="mt-10 flex items-center justify-center gap-x-6">
+                <div class="mt-10 flex flex-col items-center justify-center gap-6 gap-x-6 lg:flex-row">
                     <a href="#contact-us"
                         class="bg-accent rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors duration-200 ease-in-out hover:bg-primary hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
                         {{ __('Επικοινωνία') }}
