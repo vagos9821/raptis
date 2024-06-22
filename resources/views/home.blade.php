@@ -12,8 +12,8 @@
     @include('components.stripe')
     {{-- @include('components.clients') --}}
     @include('components.divider')
-    @include('components.contact-us')
-    @include('components.divider')
     @include('carousel.index')
+    @include('components.divider')
+    @include('components.contact-us')
     {{-- Body end, footer and html end --}}
 @endsection

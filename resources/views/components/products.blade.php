@@ -1,4 +1,4 @@
-<div class="bg-background overflow-hidden py-6" id="about-us">
+<div class="bg-background overflow-hidden py-6" id="our-products">
     @foreach ($categories as $category)
         @php
             $currentLocale = App::getLocale();

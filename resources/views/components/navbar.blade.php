@@ -20,13 +20,13 @@
                 class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
                 {{ __('Αρχική') }}
             </a>
+            <a href="/products"
+                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
+                {{ __('Τα προϊόντα μας') }}
+            </a>
             <a href="#about-us"
                 class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
                 {{ __('Για εμάς') }}
-            </a>
-            <a href="#contact-us"
-                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
-                {{ __('Επικοινωνία') }}
             </a>
             {{-- Toggle light and dark mode --}}
             <button id="toggle-light"
@@ -59,13 +59,13 @@
                 class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
                 {{ __('Αρχική') }}
             </a>
+            <a href="/products"
+                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
+                {{ __('Τα προϊόντα μας') }}
+            </a>
             <a href="#about-us"
                 class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
                 {{ __('Για εμάς') }}
-            </a>
-            <a href="#contact-us"
-                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
-                {{ __('Επικοινωνία') }}
             </a>
             {{-- Toggle language --}}
             @if (app()->getLocale() == 'en')
