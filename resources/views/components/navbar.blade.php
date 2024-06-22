@@ -1,7 +1,7 @@
 <nav class="bg-primary fixed left-0 right-0 top-3 z-20 mx-auto w-11/12 max-w-screen-xl rounded-md shadow-lg lg:w-full">
     <div class="flex items-center justify-between px-4 py-3 lg:px-8">
         {{-- Logo --}}
-        <a href="/">
+        <a href={{ '/' . app()->getLocale() }}>
             <svg version="1.0" xmlns="/www.w3.org/2000/svg" viewBox="0 0 201.000000 200.000000"
                 preserveAspectRatio="xMidYMid meet" width="50px" height="50px">
                 <g transform="translate(0.000000,200.000000) scale(0.100000,-0.100000)"
@@ -16,15 +16,15 @@
         {{-- -- Desktop -- --}}
         <div class="hidden flex-grow justify-center space-x-[100px] text-lg lg:flex">
             {{-- Destinations --}}
-            <a href="/"
+            <a href={{ '/' . app()->getLocale() }}
                 class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
                 {{ __('Αρχική') }}
             </a>
-            <a href="/products"
+            <a href={{ '/' . App::getLocale() . '/products' }}
                 class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
                 {{ __('Τα προϊόντα μας') }}
             </a>
-            <a href="#about-us"
+            <a href={{ '/' . App::getLocale() . '/about-us' }}
                 class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
                 {{ __('Για εμάς') }}
             </a>
@@ -55,15 +55,15 @@
         <div id="menu"
             class="bg-primary absolute right-0 top-[60px] flex hidden w-fit min-w-[200px] flex-col space-y-[20px] rounded-md p-[10px] pt-[30px] shadow-md transition-opacity lg:hidden">
             {{-- Destinations --}}
-            <a href="/"
+            <a href={{ '/' . app()->getLocale() }}
                 class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
                 {{ __('Αρχική') }}
             </a>
-            <a href="/products"
+            <a href={{ '/' . App::getLocale() . '/products' }}
                 class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
                 {{ __('Τα προϊόντα μας') }}
             </a>
-            <a href="#about-us"
+            <a href={{ '/' . App::getLocale() . '/about-us' }}
                 class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
                 {{ __('Για εμάς') }}
             </a>

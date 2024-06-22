@@ -1,21 +1,24 @@
 <div class="bg-background overflow-hidden py-6" id="our-products">
-    @foreach ($categories as $category)
+    @foreach ($products as $product)
         @php
             $currentLocale = App::getLocale();
-            $desc = $category->desc[$currentLocale];
+            $desc = $product->desc[$currentLocale];
+            $carouselId = 'carousel-' . $loop->index;
+            $prevBtnId = 'prevBtn-' . $loop->index;
+            $nextBtnId = 'nextBtn-' . $loop->index;
         @endphp
         @if ($loop->even)
             {{-- About us content Desktop --}}
             <div
-                class="slidingDivRight mx-auto hidden w-full max-w-[1440px] translate-x-full transform flex-col items-center justify-center opacity-0 transition duration-1000 lg:flex lg:flex-row">
-                <div class="my-20 mr-20 w-1/2">
+                class="slidingDivRight justify-centeropacity-0 mx-auto w-full max-w-[1440px] translate-x-full transform flex-col items-center gap-6 transition duration-1000 md:px-20 lg:flex lg:flex-row">
+                <div class="mr-0 w-full items-center justify-center md:my-20 md:ml-0 md:mr-20 md:w-1/2">
                     {{-- About us title --}}
-                    <h2 class="text-primary mb-[25px] text-4xl font-bold tracking-tight sm:text-4xl">
-                        {{ __($category->name) }}
+                    <h2 class="text-primary text-2xl font-bold tracking-tight sm:text-4xl md:mb-[25px]">
+                        {{ __($product->name) }}
                     </h2>
                     {{-- About us description --}}
                     <ul class="text-primary flex flex-col gap-3 text-left text-[12px] lg:text-sm">
-                        <li class="text-gray-600 text-xl leading-8">
+                        <li class="text-gray-600 text-lg leading-8">
                             @foreach ($desc as $desc)
                                 {{ $desc }}.
                             @endforeach
@@ -23,63 +26,39 @@
                     </ul>
                 </div>
                 {{-- About us image --}}
-                <img src="{{ $category->img }}" class="max-w-96 h-96 max-h-96 w-96 rounded-xl object-contain md:block">
-            </div>
-            {{-- About us content Mobile --}}
-            <div
-                class="slidingDivRight mx-auto flex w-full max-w-[1440px] translate-x-full transform flex-col items-center justify-center opacity-0 transition duration-1000 lg:hidden lg:flex-row">
-                <div class="mx-5 flex h-[100vh] w-full flex-col items-center justify-center">
-                    {{-- About us title --}}
-                    <h2 class="text-primary mx-5 text-center text-3xl font-bold tracking-tight">
-                        {{ __($category->name) }}
-                    </h2>
-                    {{-- About us image --}}
-                    <img src="{{ $category->img }}"
-                        class="max-w-96 h-96 max-h-96 w-96 rounded-xl object-contain md:block">
-                    {{-- About us description --}}
-                    <ul class="text-primary flex flex-col gap-3 text-center text-[12px]">
-                        <li class="text-gray-600 mx-5 text-xl leading-8">
-                            {{ $desc }}.
-                        </li>
-                    </ul>
-                </div>
+                @includeFirst([
+                    'components.products_carousel',
+                    'product' => $product,
+                    'carouselId' => $carouselId,
+                    'prevBtnId' => $prevBtnId,
+                    'nextBtnId' => $nextBtnId,
+                    'desc' => $desc,
+                ])
             </div>
         @else
             {{-- About us content Desktop --}}
             <div
-                class="slidingDiv mx-auto hidden w-full max-w-[1440px] -translate-x-full transform flex-col items-center justify-center opacity-0 transition duration-1000 lg:flex lg:flex-row">
+                class="slidingDiv mx-auto w-full max-w-[1440px] -translate-x-full transform flex-col items-center justify-center gap-6 opacity-0 transition duration-1000 md:px-20 lg:flex lg:flex-row">
                 {{-- About us image --}}
-                <img src="{{ $category->img }}" class="max-w-96 h-96 max-h-96 w-96 rounded-xl object-contain md:block">
-                <div class="my-20 ml-20 w-1/2">
+                @includeFirst([
+                    'components.products_carousel',
+                    'product' => $product,
+                    'carouselId' => $carouselId,
+                    'prevBtnId' => $prevBtnId,
+                    'nextBtnId' => $nextBtnId,
+                    'desc' => $desc,
+                ])
+                <div class="w-full items-center justify-center md:my-20 md:w-1/2">
                     {{-- About us title --}}
-                    <h2 class="text-primary mb-[25px] text-4xl font-bold tracking-tight sm:text-4xl">
-                        {{ __($category->name) }}
+                    <h2 class="text-primary text-2xl font-bold tracking-tight sm:text-4xl md:mb-[25px]">
+                        {{ __($product->name) }}
                     </h2>
                     {{-- About us description --}}
                     <ul class="text-primary flex flex-col gap-3 text-left text-[12px] lg:text-sm">
-                        <li class="text-gray-600 text-xl leading-8">
+                        <li class="text-gray-600 text-lg leading-8">
                             @foreach ($desc as $desc)
                                 {{ $desc }}.
                             @endforeach
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            {{-- About us content Mobile --}}
-            <div
-                class="slidingDiv mx-auto flex w-full max-w-[1440px] -translate-x-full transform flex-col items-center justify-center opacity-0 transition duration-1000 lg:hidden lg:flex-row">
-                <div class="mx-5 flex h-[100vh] w-full flex-col items-center justify-center">
-                    {{-- About us title --}}
-                    <h2 class="text-primary mx-5 text-center text-3xl font-bold tracking-tight">
-                        {{ __($category->name) }}
-                    </h2>
-                    {{-- About us image --}}
-                    <img src="{{ $category->img }}"
-                        class="max-w-96 h-96 max-h-96 w-96 rounded-xl object-contain md:block">
-                    {{-- About us description --}}
-                    <ul class="text-primary flex flex-col gap-3 text-center text-[12px]">
-                        <li class="text-gray-600 mx-5 text-xl leading-8">
-                            {{ $desc }}.
                         </li>
                     </ul>
                 </div>
@@ -89,6 +68,7 @@
             @include('components.divider')
         @endif
     @endforeach
+
 </div>
 
 <script>

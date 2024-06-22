@@ -14,11 +14,11 @@
 </div>
 {{-- Show All Products Main Content --}}
 <div class="flex flex-col items-center justify-center bg-background/10">
-    <h1 class="mb-[100px] mt-[150px] text-6xl">{{ __('Τα προϊόντα μας') }}</h1>
+    <h1 class="mb-[100px] mt-[150px] text-3xl lg:text-6xl">{{ __('Τα προϊόντα μας') }}</h1>
     <div class="mb-6 flex flex-wrap items-center justify-center gap-3">
         @foreach ($images as $image)
             <img src="{{ asset('raptis_photos/' . $image) }}" alt="Photo"
-                class="hover h-full rounded-xl shadow-xl duration-300 ease-in-out hover:scale-110">
+                class="hover h-[180px] rounded-xl shadow-xl duration-300 ease-in-out hover:scale-110 lg:h-full">
         @endforeach
     </div>
 </div>

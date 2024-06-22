@@ -38,7 +38,7 @@
                         class="bg-accent rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors duration-200 ease-in-out hover:bg-primary hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
                         {{ __('Επικοινωνία') }}
                     </a>
-                    <a href="#about-us"
+                    <a href={{ '/' . App::getLocale() . '/about-us' }}
                         class="text-gray-900 text-sm font-semibold leading-6 transition-colors duration-200 ease-in-out hover:text-accent">
                         {{ __('Για εμάς') }}
                         <span aria-hidden="true">→</span>

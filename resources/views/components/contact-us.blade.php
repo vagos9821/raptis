@@ -38,8 +38,9 @@
                     {{-- Name --}}
                     <div>
                         <label class="sr-only" for="name">{{ __('Name') }}</label>
-                        <input class="bg-background w-full rounded-lg border-accent p-3" placeholder="Όνομα"
-                            type="text" id="name" autocomplete="cc-name" name="name" />
+                        <input class="bg-background w-full rounded-lg border-accent p-3"
+                            placeholder="{{ __('Name') }}" type="text" id="name" autocomplete="cc-name"
+                            name="name" />
                     </div>
 
                     {{-- Email and phone number --}}
@@ -52,8 +53,9 @@
 
                         <div>
                             <label class="sr-only" for="phone">{{ __('Phone') }}</label>
-                            <input class="bg-background w-full rounded-lg border-accent p-3" placeholder="Τηλέφωνο"
-                                type="tel" id="phone" autocomplete="tel" name="phone" />
+                            <input class="bg-background w-full rounded-lg border-accent p-3"
+                                placeholder="{{ __('Phone') }}" type="tel" id="phone" autocomplete="tel"
+                                name="phone" />
                         </div>
                     </div>
 
@@ -90,7 +92,8 @@
                     {{-- Message --}}
                     <div>
                         <label class="sr-only" for="message">{{ __('Message') }}</label>
-                        <textarea class="bg-background w-full rounded-lg border-accent p-3" placeholder="Μήνυμα" rows="8" id="message"></textarea>
+                        <textarea class="bg-background w-full rounded-lg border-accent p-3" placeholder="{{ __('Message') }}" rows="8"
+                            id="message"></textarea>
                     </div>
                     {{-- Send Button --}}
                     <div class="mt-4">
