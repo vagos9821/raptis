@@ -14,7 +14,7 @@
         </a>
 
         {{-- -- Desktop -- --}}
-        <div class="hidden flex-grow justify-center space-x-[100px] text-lg lg:flex">
+        <div class="hidden flex-grow justify-center space-x-[100px] text-xl lg:flex">
             {{-- Destinations --}}
             <a href={{ '/' . app()->getLocale() }}
                 class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
@@ -56,15 +56,15 @@
             class="bg-primary absolute right-0 top-[60px] flex hidden w-fit min-w-[200px] flex-col space-y-[20px] rounded-md p-[10px] pt-[30px] shadow-md transition-opacity lg:hidden">
             {{-- Destinations --}}
             <a href={{ '/' . app()->getLocale() }}
-                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
+                class="nav-link text-background text-base transition-colors duration-200 ease-in-out hover:text-accent md:text-lg">
                 {{ __('Αρχική') }}
             </a>
             <a href={{ '/' . App::getLocale() . '/products' }}
-                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
+                class="nav-link text-background text-base transition-colors duration-200 ease-in-out hover:text-accent md:text-lg">
                 {{ __('Τα προϊόντα μας') }}
             </a>
             <a href={{ '/' . App::getLocale() . '/about-us' }}
-                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
+                class="nav-link text-background text-base transition-colors duration-200 ease-in-out hover:text-accent md:text-lg">
                 {{ __('Για εμάς') }}
             </a>
             {{-- Toggle language --}}

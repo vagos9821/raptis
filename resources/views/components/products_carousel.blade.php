@@ -15,11 +15,11 @@
         </div>
         {{-- Carousel buttons --}}
         <button id="{{ $prevBtnId }}" aria-label="Previous item"
-            class="focus:shadow-outline bg-accent text-primary absolute left-0 top-0 -ml-6 mt-32 h-12 w-12 rounded-full text-2xl shadow-md hover:text-secondary focus:text-secondary focus:outline-none">
+            class="focus:shadow-outline bg-accent text-primary absolute left-8 top-0 -ml-6 mt-32 h-12 w-12 rounded-full text-2xl shadow-md hover:text-secondary focus:text-secondary focus:outline-none md:left-0">
             <span class="block" style="transform: scale(-1);">&#x279c;</span>
         </button>
         <button id="{{ $nextBtnId }}" aria-label="Next item"
-            class="focus:shadow-outline bg-accent text-primary absolute right-0 top-0 -mr-6 mt-32 h-12 w-12 rounded-full text-2xl shadow-md hover:text-secondary focus:text-secondary focus:outline-none">
+            class="focus:shadow-outline bg-accent text-primary absolute right-8 top-0 -mr-6 mt-32 h-12 w-12 rounded-full text-2xl shadow-md hover:text-secondary focus:text-secondary focus:outline-none md:right-0">
             <span class="block" style="transform: scale(1);">&#x279c;</span>
         </button>
     </div>

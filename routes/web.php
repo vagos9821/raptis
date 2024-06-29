@@ -19,6 +19,19 @@ function fetchData($locale = null)
     // Cache key should include locale to handle multiple locales
     $cacheKey = "data-{$locale}";
 
+    // Check if environment is local
+    if (App::environment('local')) {
+        $categories = Category::all();
+        $products = Products::all();
+
+        // Fetch images
+        $directory = public_path('raptis_photos');
+        $imageFiles = glob($directory . "/*.{jpg,jpeg,png,gif,svg,webp}", GLOB_BRACE);
+        $images = array_map('basename', $imageFiles);
+
+        return compact('categories', 'products', 'images');
+    }
+
     // Fetch all data and cache it
     return Cache::remember($cacheKey, 600, function () {
         $categories = Category::all();
@@ -29,7 +42,7 @@ function fetchData($locale = null)
         $imageFiles = glob($directory . "/*.{jpg,jpeg,png,gif,svg,webp}", GLOB_BRACE);
         $images = array_map('basename', $imageFiles);
 
-        return compact('categories', 'products', 'images', );
+        return compact('categories', 'products', 'images');
     });
 }
 
@@ -37,6 +50,13 @@ function fetchData($locale = null)
 function getCachedView($viewName, $locale = null)
 {
     $cacheKey = $locale ? "{$viewName}-{$locale}" : $viewName;
+
+    // Check if environment is local
+    if (App::environment('local')) {
+        $data = fetchData($locale);
+        return view($viewName, $data)->render();
+    }
+
     return Cache::remember($cacheKey, 600, function () use ($viewName, $locale) {
         $data = fetchData($locale);
         return view($viewName, $data)->render();
@@ -55,4 +75,3 @@ Route::get('/{locale?}/about-us', function ($locale = null) {
 Route::get('/{locale?}', function ($locale = null) {
     return getCachedView('home', $locale);
 });
-

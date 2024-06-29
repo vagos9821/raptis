@@ -10,7 +10,7 @@
 
         <!-- Left side: Rights reserved -->
         <div class="mb-5 flex w-full items-center justify-center md:mb-0 md:w-1/3">
-            <p class="text-background text-sm lg:text-lg">
+            <p class="text-background text-sm xl:text-base">
                 {{ __('All rights reserved.') }}
             </p>
         </div>
@@ -26,8 +26,8 @@
         </div>
 
         <!-- Right side: Contact info -->
-        <div class="text-background flex w-full items-center justify-center text-sm md:w-1/3 lg:text-lg">
-            <ul class="flex flex-col space-x-6 md:flex-row md:items-center md:justify-center">
+        <div class="text-background flex w-full items-center justify-center text-base md:w-1/3 md:text-lg lg:text-xl">
+            <ul class="flex flex-col flex-wrap space-x-6 md:flex-row md:items-center md:justify-center">
                 <li class="mb-2 flex items-center justify-start md:mb-0">
                     @svg('map', 'size-8 fill-accent') {{ __('Ευφράτου 8 Βύρωνας 16232') }}
                 </li>
@@ -43,7 +43,7 @@
 
     <!-- Designed by -->
     <div class="bg-primary flex w-full justify-center py-1">
-        <p class="text-background text-sm">
+        <p class="text-background text-sm xl:text-base">
             {{ __('Created and Designed by: Vangelis Sigalas') }}
         </p>
     </div>

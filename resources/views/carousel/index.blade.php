@@ -33,11 +33,11 @@
 
                 <div class="p-12 md:py-12 md:pl-16 md:pr-24">
                     {{-- Carousel text --}}
-                    <p id="text-container" class="text-primary">
+                    <p id="text-container" class="text-primary text-base md:text-lg lg:text-xl">
                         {{ $carouselItems->first()->text_content }}
                     </p>
                     <a class="mt-3 flex items-baseline text-accent hover:text-accent focus:text-accent" href="#clients">
-                        <span>Learn more about our users</span>
+                        <span class="text-sm xl:text-base">Learn more about our users</span>
                         <span class="ml-1 text-xs">&#x279c;</span>
                     </a>
                 </div>

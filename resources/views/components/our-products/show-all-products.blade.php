@@ -14,7 +14,8 @@
 </div>
 {{-- Show All Products Main Content --}}
 <div class="flex flex-col items-center justify-center bg-background/10">
-    <h1 class="mb-[100px] mt-[150px] text-3xl lg:text-6xl">{{ __('Τα προϊόντα μας') }}</h1>
+    <h1 class="mb-[50px] mt-[150px] text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl">
+        {{ __('Τα προϊόντα μας') }}</h1>
     <div class="mb-6 flex flex-wrap items-center justify-center gap-3">
         @foreach ($images as $image)
             <img loading="lazy" src="{{ asset('raptis_photos/' . $image) }}" alt="Photo"
