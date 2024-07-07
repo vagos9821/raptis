@@ -44,7 +44,7 @@
 </div>
 
 {{-- Category modal script --}}
-<script defer type="module">
+<script defer>
     function showCategoryModal(img, name, desc) {
         document.getElementById('modalImg').src = img;
         document.getElementById('modalTitle').textContent = name;

@@ -1,4 +1,4 @@
-<section class="bg-background text-primary z-30" id="contact-us">
+<section class="text-primary z-30" id="contact-us">
 
     <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         {{-- Contact title --}}

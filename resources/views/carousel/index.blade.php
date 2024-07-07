@@ -1,4 +1,4 @@
-<div class="bg-background p-8 sm:p-16 lg:p-24">
+<div class="p-8 sm:p-16 lg:p-24">
     {{-- Load all the carousel items --}}
     @php
         use App\Models\CarouselItem;
@@ -6,7 +6,7 @@
 
     @endphp
     {{-- Carousel container --}}
-    <div class="bg-background mx-auto w-full">
+    <div class="mx-auto w-full">
         <div
             class="bg-background relative mx-auto block min-h-[19rem] max-w-[1250px] items-center rounded-lg shadow-xl md:flex">
             <div id="carousel-items"

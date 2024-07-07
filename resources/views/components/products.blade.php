@@ -1,4 +1,4 @@
-<div class="bg-background overflow-hidden py-6" id="our-products">
+<div class="overflow-hidden py-6" id="our-products">
     @foreach ($products as $product)
         @php
             $currentLocale = App::getLocale();
@@ -10,7 +10,7 @@
         @if ($loop->even)
             {{-- About us content --}}
             <div
-                class="slidingDivRight lg:justify-centerlg:opacity-0 mx-auto flex w-full max-w-[90vw] flex-col items-center gap-6 p-2 transition duration-1000 md:p-0 md:pl-[10vw] lg:flex lg:translate-x-full lg:transform lg:flex-row">
+                class="slidingDivRight lg:justify-centerlg:opacity-0 mx-auto flex w-full max-w-[90vw] flex-col items-center gap-6 p-2 transition duration-1000 md:p-0 md:pl-[10vw] lg:flex lg:max-h-[400px] lg:min-h-[400px] lg:translate-x-full lg:transform lg:flex-row">
                 {{-- About us image --}}
                 <div class="w-full items-center justify-center md:w-1/2 lg:order-2">
                     @includeFirst([
@@ -40,7 +40,7 @@
         @else
             {{-- About us content --}}
             <div
-                class="slidingDiv mx-auto flex w-full max-w-[90vw] flex-col items-center justify-center gap-6 p-2 transition duration-1000 md:p-0 md:pr-[10vw] lg:flex lg:-translate-x-full lg:transform lg:flex-row lg:opacity-0">
+                class="slidingDiv mx-auto flex w-full max-w-[90vw] flex-col items-center justify-center gap-6 p-2 transition duration-1000 md:p-0 md:pr-[10vw] lg:flex lg:max-h-[400px] lg:min-h-[400px] lg:-translate-x-full lg:transform lg:flex-row lg:opacity-0">
                 {{-- About us image --}}
                 <div class="w-full items-center justify-center md:my-20 md:w-1/2">
                     @includeFirst([
