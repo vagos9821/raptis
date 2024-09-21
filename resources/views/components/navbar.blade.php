@@ -1,9 +1,10 @@
-<nav class="bg-primary fixed left-0 right-0 top-3 z-20 mx-auto w-11/12 max-w-screen-xl rounded-md shadow-lg lg:w-full">
+<nav
+    class="bg-primary fixed left-0 right-0 top-3 z-20 mx-auto w-11/12 max-w-screen-xl rounded-md shadow-lg lg:w-full 2xl:max-w-[1440px]">
     <div class="flex items-center justify-between px-4 py-3 lg:px-8">
         {{-- Logo --}}
         <a href={{ '/' . app()->getLocale() }} aria-label="Home">
-            <svg version="1.0" xmlns="/www.w3.org/2000/svg" viewBox="0 0 201.000000 200.000000"
-                preserveAspectRatio="xMidYMid meet" width="50px" height="50px">
+            <svg class="size-10 lg:size-[50px]" version="1.0" xmlns="/www.w3.org/2000/svg"
+                viewBox="0 0 201.000000 200.000000" preserveAspectRatio="xMidYMid meet" width="50px" height="50px">
                 <g transform="translate(0.000000,200.000000) scale(0.100000,-0.100000)"
                     class="fill-background dark:fill-primary" stroke="none">
                     <path
@@ -14,18 +15,18 @@
         </a>
 
         {{-- -- Desktop -- --}}
-        <div class="hidden flex-grow justify-center space-x-[100px] text-xl lg:flex">
+        <div class="hidden flex-grow justify-center space-x-[50px] lg:flex">
             {{-- Destinations --}}
             <a href={{ '/' . app()->getLocale() }}
-                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
+                class="nav-link text-background text-lg transition-colors duration-200 ease-in-out hover:text-accent 2xl:text-xl">
                 {{ __('Αρχική') }}
             </a>
             <a href={{ '/' . App::getLocale() . '/products' }}
-                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
+                class="nav-link text-background text-lg transition-colors duration-200 ease-in-out hover:text-accent 2xl:text-xl">
                 {{ __('Τα προϊόντα μας') }}
             </a>
             <a href={{ '/' . App::getLocale() . '/about-us' }}
-                class="nav-link text-background transition-colors duration-200 ease-in-out hover:text-accent">
+                class="nav-link text-background text-lg transition-colors duration-200 ease-in-out hover:text-accent 2xl:text-xl">
                 {{ __('Για εμάς') }}
             </a>
             {{-- Toggle light and dark mode --}}

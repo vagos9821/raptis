@@ -1,9 +1,11 @@
 <?php
 
 use App\Models\Category;
+use App\Models\Client;
 use App\Models\Products;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 
 // Function to fetch clients, categories, and images based on locale
@@ -23,26 +25,28 @@ function fetchData($locale = null)
     if (App::environment('local')) {
         $categories = Category::all();
         $products = Products::all();
+        $clients = Client::all();
 
         // Fetch images
         $directory = public_path('raptis_photos');
-        $imageFiles = glob($directory . "/*.{jpg,jpeg,png,gif,svg,webp}", GLOB_BRACE);
+        $imageFiles = File::files($directory);
         $images = array_map('basename', $imageFiles);
 
-        return compact('categories', 'products', 'images');
+        return compact('categories', 'products', 'images', 'clients');
     }
 
     // Fetch all data and cache it
     return Cache::remember($cacheKey, 600, function () {
         $categories = Category::all();
         $products = Products::all();
+        $clients = Client::all();
 
         // Fetch images
         $directory = public_path('raptis_photos');
         $imageFiles = glob($directory . "/*.{jpg,jpeg,png,gif,svg,webp}", GLOB_BRACE);
         $images = array_map('basename', $imageFiles);
 
-        return compact('categories', 'products', 'images');
+        return compact('categories', 'products', 'images', 'clients');
     });
 }
 
