@@ -68,10 +68,22 @@ Route::get('/{locale?}/products', function ($locale = null) {
     return getCachedView('our-products', $locale);
 });
 
+Route::get('/products', function ($locale = null) {
+    return getCachedView('our-products', $locale);
+});
+
 Route::get('/{locale?}/about-us', function ($locale = null) {
     return getCachedView('about-us', $locale);
 });
 
+Route::get('/about-us', function ($locale = null) {
+    return getCachedView('about-us', $locale);
+});
+
 Route::get('/{locale?}', function ($locale = null) {
+    return getCachedView('home', $locale);
+});
+
+Route::get('/', function ($locale = null) {
     return getCachedView('home', $locale);
 });
