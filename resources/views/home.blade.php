@@ -4,8 +4,8 @@
 @section('content')
     @include('components.navbar')
     @include('components.hero')
-    {{-- @include('components.divider')
-    @include('components.products') --}}
+    @include('components.divider')
+    @include('components.products')
     @include('components.divider')
     @include('components.categories')
     {{-- @include('components.about-us') --}}

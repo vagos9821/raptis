@@ -2,8 +2,7 @@
 
     <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         {{-- Contact title --}}
-        <h2
-            class="text-primary mb-[50px] text-2xl font-bold tracking-tight md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl">
+        <h2 class="text-primary mb-[50px] text-2xl font-bold tracking-tight md:text-[40px]">
             {{ __('Επικοινωνία') }}</h2>
         <div class="grid grid-cols-1 gap-x-8 gap-y-8 lg:grid-cols-8">
             <div class="mx-auto lg:col-span-2 lg:py-12">
@@ -35,7 +34,7 @@
             </div>
 
             {{-- Contact Form --}}
-            <div class="bg-primary rounded-lg p-8 shadow-xl lg:col-span-4 lg:p-12">
+            <div class="bg-primary scale-75 rounded-lg p-8 shadow-xl lg:col-span-4 lg:p-12">
                 <form action="" class="space-y-4">
                     {{-- Name --}}
                     <div>
