@@ -9,7 +9,7 @@
     <title>{{ __('e-Bags - ΡΑΠΤΗΣ ΛΕΩΝΙΔΑΣ') }}</title>
     <meta name="description" content="Raptis Packing">
     <meta name="theme-color" content="#d5ab67" />
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js" defer type="module"></script>
     <link rel="manifest" href="{{ asset('manifest.json') }}">
     <link rel="canonical" href="{{ url()->current() }}" />
