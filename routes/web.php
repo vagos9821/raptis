@@ -36,18 +36,18 @@ function fetchData($locale = null)
     }
 
     // Fetch all data and cache it
-    return Cache::remember($cacheKey, 600, function () {
-        $categories = Category::all();
-        $products = Products::all();
-        $clients = Client::all();
 
-        // Fetch images
-        $directory = public_path('raptis_photos');
-        $imageFiles = glob($directory . "/*.{jpg,jpeg,png,gif,svg,webp}", GLOB_BRACE);
-        $images = array_map('basename', $imageFiles);
+    $categories = Category::all();
+    $products = Products::all();
+    $clients = Client::all();
 
-        return compact('categories', 'products', 'images', 'clients');
-    });
+    // Fetch images
+    $directory = public_path('raptis_photos');
+    $imageFiles = glob($directory."/*.{jpg,jpeg,png,gif,svg,webp}", GLOB_BRACE);
+    $images = array_map('basename', $imageFiles);
+
+    return compact('categories', 'products', 'images', 'clients');
+
 }
 
 // General route function to cache views
@@ -61,10 +61,8 @@ function getCachedView($viewName, $locale = null)
         return view($viewName, $data)->render();
     }
 
-    return Cache::remember($cacheKey, 600, function () use ($viewName, $locale) {
-        $data = fetchData($locale);
-        return view($viewName, $data)->render();
-    });
+    $data = fetchData($locale);
+    return view($viewName, $data)->render();
 }
 
 // Define routes with caching logic
