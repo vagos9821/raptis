@@ -18,9 +18,6 @@ function fetchData($locale = null)
         App::setLocale('el');
     }
 
-    // Cache key should include locale to handle multiple locales
-    $cacheKey = "data-{$locale}";
-
     $categories = Category::all();
     $products = Products::all();
     $clients = Client::all();
@@ -37,14 +34,6 @@ function fetchData($locale = null)
 // General route function to cache views
 function getCachedView($viewName, $locale = null)
 {
-    $cacheKey = $locale ? "{$viewName}-{$locale}" : $viewName;
-
-    // Check if environment is local
-    if (App::environment('local')) {
-        $data = fetchData($locale);
-        return view($viewName, $data)->render();
-    }
-
     $data = fetchData($locale);
     return view($viewName, $data)->render();
 }
