@@ -2,7 +2,7 @@
 @extends('layout')
 {{-- Content of body --}}
 @section('content')
-    @include('components.navbar')
+    @include('components.navbar2')
     @include('components.hero')
     @include('components.divider')
     @include('components.products')

@@ -44,11 +44,11 @@
             </div>
             {{-- Carousel buttons --}}
             <button id="prevBtn" aria-label="Previous item"
-                class="focus:shadow-outline text-primary absolute left-0 top-0 -ml-6 mt-32 h-12 w-12 rounded-full bg-secondary text-2xl shadow-md hover:text-accent focus:text-accent focus:outline-none">
+                class="focus:shadow-outline text-primary absolute left-0 top-0 -ml-6 mt-32 h-12 w-12 rounded-full bg-accent text-2xl shadow-md hover:text-secondary focus:text-secondary focus:outline-none">
                 <span class="block" style="transform: scale(-1);">&#x279c;</span>
             </button>
             <button id="nextBtn" aria-label="Next item"
-                class="focus:shadow-outline text-primary absolute right-0 top-0 -mr-6 mt-32 h-12 w-12 rounded-full bg-secondary text-2xl shadow-md hover:text-accent focus:text-accent focus:outline-none">
+                class="focus:shadow-outline text-primary absolute right-0 top-0 -mr-6 mt-32 h-12 w-12 rounded-full bg-accent text-2xl shadow-md hover:text-secondary focus:text-secondary focus:outline-none">
                 <span class="block" style="transform: scale(1);">&#x279c;</span>
             </button>
         </div>
@@ -56,7 +56,7 @@
         <div class="flex items-center justify-center pt-6">
             @foreach ($carouselItems as $index => $item)
                 <button aria-label="Slide {{ $index + 1 }}"
-                    class="carousel-indicator {{ $index === 0 ? 'opacity-100' : 'opacity-50 hover:opacity-100 focus:opacity-100' }} size-5 bg-primary mx-3 rounded-full hover:bg-accent focus:bg-accent"
+                    class="carousel-indicator {{ $index === 0 ? 'opacity-100' : 'opacity-50 hover:opacity-100 focus:opacity-100' }} size-2 bg-primary mx-3 rounded-full hover:bg-accent focus:bg-accent"
                     data-slide-to="{{ $index }}">
 
                 </button>

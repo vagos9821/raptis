@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Session;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +26,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(Exporter $exporter): void
     {
+        $this->locale();
+
         if (env('APP_ENV') === 'production') {
             URL::forceScheme('https');
         }
@@ -43,7 +48,7 @@ class AppServiceProvider extends ServiceProvider
             // Construct the path to the SVG file
             $svgPath = public_path("svg/{$fileName}.svg");
 
-            if (!File::exists($svgPath)) {
+            if (! File::exists($svgPath)) {
                 return $fileName;  // Return the file name if SVG file does not exist
             }
 
@@ -59,7 +64,7 @@ class AppServiceProvider extends ServiceProvider
             // Get the <svg> element
             $svgElement = $dom->getElementsByTagName('svg')->item(0);
 
-            if ($svgElement && !empty($className)) {
+            if ($svgElement && ! empty($className)) {
                 // Append or set the class attribute
                 $existingClass = $svgElement->getAttribute('class');
                 $newClass = trim("{$existingClass} {$className}");
@@ -71,5 +76,18 @@ class AppServiceProvider extends ServiceProvider
 
             return $svgContent;
         });
+    }
+
+    public function locale()
+    {
+        $locale = Request::segment(1); // Get first segment from URL
+
+        if (! in_array($locale, config('app.available_locales'))) {
+            $locale = config('app.fallback_locale'); // Default locale
+        }
+
+        App::setLocale($locale);
+        Session::put('locale', $locale);
+
     }
 }
