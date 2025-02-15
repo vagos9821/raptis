@@ -42,7 +42,7 @@ function fetchData($locale = null)
     $clients = Client::all();
 
     // Fetch images
-    $directory = public_path('raptis_photos');
+    $directory = storage_path('app/public/raptis_photos');
     $imageFiles = glob($directory."/*.{jpg,jpeg,png,gif,svg,webp}", GLOB_BRACE);
     $images = array_map('basename', $imageFiles);
 
