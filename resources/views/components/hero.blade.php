@@ -24,11 +24,11 @@
             </div>
             <div class="text-center">
                 {{-- Big text --}}
-                <h1 class="text-primary text-2xl font-bold tracking-tight md:text-3xl xl:text-4xl 2xl:text-6xl">
+                <h1 class="text-primary text-2xl font-bold tracking-tight md:text-3xl">
                     {{ __('Η επιχείρηση μας ασχολείται με τις χάρτινες & πλαστικές τσάντες από το 1991 με ιδιαίτερη επιτυχία!') }}
                 </h1>
                 {{-- Small text --}}
-                <p class="text-primary text-lg leading-5 opacity-75 md:mt-6 md:text-xl md:leading-10 xl:text-2xl">
+                <p class="text-primary text-lg leading-5 opacity-75 md:mt-6 md:text-xl md:leading-10 xl:text-xl">
                     <span class="underline">{{ __('Είμαστε κάθετη μονάδα.') }}</span>
                     {{ __('Κατέχουμε όλο το πακέτο της συσκευασίας. Δημιουργούμε, τυπώνουμε, κατασκευάζουμε & παράγουμε τα προιόντα για να εξυπηρετήσουμε τις ανάγκες των επιχειρήσεων.') }}
                 </p>

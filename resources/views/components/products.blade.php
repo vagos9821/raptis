@@ -24,12 +24,12 @@
                 </div>
                 <div class="w-full items-center justify-center md:my-20 md:w-1/2 lg:order-1">
                     {{-- About us title --}}
-                    <h2 class="text-primary text-2xl font-bold tracking-normal md:mb-[25px] md:text-3xl">
+                    <h2 class="text-primary text-2xl font-bold tracking-normal md:mb-[25px]">
                         {{ __($product->name) }}
                     </h2>
                     {{-- About us description --}}
                     <ul class="text-primary flex flex-col gap-3 text-left">
-                        <li class="text-gray-600 text-base leading-8 md:text-lg lg:text-xl lg:leading-10">
+                        <li class="text-gray-600 text-base leading-8 md:text-lg lg:leading-10">
                             @foreach ($desc as $desc)
                                 {{ $desc }}.
                             @endforeach
@@ -54,12 +54,12 @@
                 </div>
                 <div class="w-full items-center justify-center md:my-20 md:w-1/2">
                     {{-- About us title --}}
-                    <h2 class="text-primary text-2xl font-bold tracking-normal md:mb-[25px] md:text-3xl">
+                    <h2 class="text-primary text-2xl font-bold tracking-normal md:mb-[25px]">
                         {{ __($product->name) }}
                     </h2>
                     {{-- About us description --}}
                     <ul class="text-primary flex flex-col gap-3 text-left">
-                        <li class="text-gray-600 text-base leading-8 md:text-lg lg:text-xl lg:leading-10">
+                        <li class="text-gray-600 text-base leading-8 md:text-lg lg:leading-10">
                             @foreach ($desc as $desc)
                                 {{ $desc }}.
                             @endforeach

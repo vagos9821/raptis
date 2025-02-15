@@ -1,5 +1,5 @@
 {{-- Details in this div for the category modal script in the categories.blade.php --}}
-<div class="relative block cursor-pointer overflow-hidden rounded-lg border border-accent p-4 transition-transform hover:scale-110 sm:p-6 lg:p-8"
+<div class="relative block cursor-pointer overflow-hidden rounded-lg border border-accent p-4 sm:p-6 lg:p-8 group"
     onclick="showCategoryModal('{{ $category->img }}', '{{ __($category->name) }}', '{{ json_encode($category->desc) }}')">
     {{-- Gradient bottom --}}
     <span
@@ -16,7 +16,7 @@
         </div>
 
         {{-- Category image --}}
-        <div class="flex items-center justify-center sm:shrink-0">
+        <div class="flex items-center justify-center sm:shrink-0 group-hover:scale-110 transition-transform">
             <img loading="lazy" alt="{{ __($category->name) }}" src="{{ $category->img }}"
                 class="size-52 rounded-lg object-cover shadow-sm" />
         </div>
