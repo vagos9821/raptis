@@ -21,28 +21,12 @@ function fetchData($locale = null)
     // Cache key should include locale to handle multiple locales
     $cacheKey = "data-{$locale}";
 
-    // Check if environment is local
-    if (App::environment('local')) {
-        $categories = Category::all();
-        $products = Products::all();
-        $clients = Client::all();
-
-        // Fetch images
-        $directory = public_path('raptis_photos');
-        $imageFiles = File::files($directory);
-        $images = array_map('basename', $imageFiles);
-
-        return compact('categories', 'products', 'images', 'clients');
-    }
-
-    // Fetch all data and cache it
-
     $categories = Category::all();
     $products = Products::all();
     $clients = Client::all();
 
     // Fetch images
-    $directory = storage_path('app/public/raptis_photos');
+    $directory = 'raptis_photos';
     $imageFiles = glob($directory."/*.{jpg,jpeg,png,gif,svg,webp}", GLOB_BRACE);
     $images = array_map('basename', $imageFiles);
 
