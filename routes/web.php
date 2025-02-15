@@ -24,7 +24,7 @@ function fetchData($locale = null)
     $categories = Category::all();
     $products = Products::all();
     $clients = Client::all();
-
+    dd(public_path('raptis_photos'));
     // Fetch images
     $directory = 'raptis_photos';
     $imageFiles = glob($directory."/*.{jpg,jpeg,png,gif,svg,webp}", GLOB_BRACE);
