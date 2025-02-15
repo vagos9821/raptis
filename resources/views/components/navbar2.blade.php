@@ -5,13 +5,13 @@
     $newRoute = str_replace($currentLocale, $newLocale, $currentRoute);
 @endphp
 
-<nav class="bg-background fixed z-20 w-[90vw] mx-10 rounded-xl mt-2 shadow-lg">
+<nav class="bg-background fixed z-20 w-[100vw] sm:mx-10 sm:rounded-xl sm:mt-2 shadow-lg">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 <!-- Mobile menu button-->
                 <button type="button" id='burgerIcon'
-                    class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset"
+                    class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-primary hover:text-white focus:ring-2 focus:ring-primary focus:outline-hidden focus:ring-inset"
                     aria-controls="mobile-menu" aria-expanded="false">
                     <span class="absolute -inset-0.5"></span>
                     <span class="sr-only">Open main menu</span>
@@ -95,17 +95,17 @@
     <div class="sm:hidden hidden" id="mobile-menu">
         <div class="space-y-1 px-2 pt-2 pb-3">
             <a href="{{ url(app()->getLocale()) }}"
-                class="block rounded-md px-3 py-2 text-base font-medium {{ request()->is(app()->getLocale()) ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-accent/70  hover:text-white' }}">
+                class="block rounded-md px-3 py-2 text-base font-medium {{ request()->is(app()->getLocale()) ? 'bg-primary text-accent' : 'text-primary hover:bg-accent/70  hover:text-primary' }}">
                 {{ __('Αρχική') }}
             </a>
 
             <a href="{{ url(app()->getLocale() . '/products') }}"
-                class="block rounded-md px-3 py-2 text-base font-medium {{ request()->is(app()->getLocale() . '/products*') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-accent/70  hover:text-white' }}">
+                class="block rounded-md px-3 py-2 text-base font-medium {{ request()->is(app()->getLocale() . '/products*') ? 'bg-primary text-accent' : 'text-primary hover:bg-accent/70  hover:text-primary' }}">
                 {{ __('Τα προϊόντα μας') }}
             </a>
 
             <a href="{{ url(app()->getLocale() . '/about-us') }}"
-                class="block rounded-md px-3 py-2 text-base font-medium {{ request()->is(app()->getLocale() . '/about-us*') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-accent/70  hover:text-white' }}">
+                class="block rounded-md px-3 py-2 text-base font-medium {{ request()->is(app()->getLocale() . '/about-us*') ? 'bg-primary text-accent' : 'text-primary hover:bg-accent/70  hover:text-primary' }}">
                 {{ __('Για εμάς') }}
             </a>
         </div>

@@ -21,42 +21,54 @@
     {{-- Dark mode button script --}}
     <script defer type="module">
         document.addEventListener('DOMContentLoaded', function() {
-            const darkModeToggle = document.getElementById('darkModeToggle');
-            const darkIcon = document.getElementById('darkIcon');
-            const lightIcon = document.getElementById('lightIcon');
+            // Select all toggle buttons and their respective icons
+            const darkModeToggles = document.querySelectorAll('[id="darkModeToggle"]');
+            const darkIcons = document.querySelectorAll('[id="darkIcon"]');
+            const lightIcons = document.querySelectorAll('[id="lightIcon"]');
 
             // Check for saved dark mode preference or system preference
             const darkMode = localStorage.getItem('darkMode');
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-            // Function to update the icons
-            function updateIcons(isDark) {
-                if (isDark) {
-                    darkIcon.classList.add('hidden');
-                    lightIcon.classList.remove('hidden');
-                } else {
-                    darkIcon.classList.remove('hidden');
-                    lightIcon.classList.add('hidden');
-                }
+            // Function to update all icons
+            function updateAllIcons(isDark) {
+                darkIcons.forEach(darkIcon => {
+                    isDark ? darkIcon.classList.add('hidden') : darkIcon.classList.remove('hidden');
+                });
+
+                lightIcons.forEach(lightIcon => {
+                    isDark ? lightIcon.classList.remove('hidden') : lightIcon.classList.add('hidden');
+                });
             }
 
             // Function to toggle dark mode
             function toggleDarkMode() {
                 const isDark = document.documentElement.classList.toggle('dark');
                 localStorage.setItem('darkMode', isDark ? 'true' : 'false');
-                updateIcons(isDark);
+                updateAllIcons(isDark);
             }
 
             // Initialize dark mode
             if (darkMode === 'true' || (!darkMode && prefersDark)) {
                 document.documentElement.classList.add('dark');
-                updateIcons(true);
+                updateAllIcons(true);
             } else {
-                updateIcons(false);
+                updateAllIcons(false);
             }
 
-            // Add click event listener
-            darkModeToggle.addEventListener('click', toggleDarkMode);
+            // Add click event listener to all toggle buttons
+            darkModeToggles.forEach(toggle => {
+                toggle.addEventListener('click', toggleDarkMode);
+            });
+
+            // Listen for system theme changes
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+                if (localStorage.getItem('darkMode') === null) {
+                    const isDark = e.matches;
+                    document.documentElement.classList.toggle('dark', isDark);
+                    updateAllIcons(isDark);
+                }
+            });
         });
     </script>
 </head>

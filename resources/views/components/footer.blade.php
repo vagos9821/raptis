@@ -2,9 +2,9 @@
 </body>
 
 <!-- Footer -->
-<footer
-    class="mt-auto py-6 h-[92px] sm:h-[64px] bg-white border-t border-gray-200 dark:bg-neutral-900 dark:border-neutral-700">
-    <div class="w-full mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-3 items-center justify-between">
+<footer class="mt-auto py-6 h-full bg-white border-t border-gray-200 dark:bg-neutral-900 dark:border-neutral-700">
+    <div
+        class="w-full mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-2 sm:gap-0 sm:grid grid-cols-3 items-center justify-between">
         <div class="flex items-center justify-center">
             <a href={{ '/' . app()->getLocale() }} aria-label="Home">
                 <svg class="size-10 lg:size-10" version="1.0" xmlns="/www.w3.org/2000/svg"
@@ -33,7 +33,7 @@
         </ul>
         <!-- End List -->
         <div>
-            <p class="text-gray-400 text-sm text-right">
+            <p class="text-gray-400 text-sm text-center sm:text-right">
                 {{ __('Created and Designed by: Vangelis Sigalas') }}
             </p>
         </div>
