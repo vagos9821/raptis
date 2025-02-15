@@ -28,7 +28,6 @@ function fetchData($locale = null)
     // Fetch images
     $directory = 'raptis_photos';
     $imageFiles = glob($directory."/*.{jpg,jpeg,png,gif,svg,webp}", GLOB_BRACE);
-    dd($imageFiles);
     $images = array_map('basename', $imageFiles);
 
     return compact('categories', 'products', 'images', 'clients');
