@@ -18,7 +18,7 @@
         {{ __('Τα προϊόντα μας') }}</h1>
     <div class="mb-6 flex flex-wrap items-center justify-center gap-3">
         @foreach ($images as $image)
-            <img loading="lazy" src="{{ asset('raptis_photos/' . $image) }}" alt="Photo"
+            <img loading="lazy" src="{{ asset('raptis_photos/' . $image->filename) }}" alt="Photo"
                 class="hover h-[180px] rounded-xl shadow-xl duration-300 ease-in-out hover:scale-110 lg:h-full">
         @endforeach
     </div>

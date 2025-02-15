@@ -2,6 +2,7 @@
 
 use App\Models\Category;
 use App\Models\Client;
+use App\Models\Image;
 use App\Models\Products;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Cache;
@@ -22,10 +23,7 @@ function fetchData($locale = null)
     $products = Products::all();
     $clients = Client::all();
 
-    // Fetch images
-    $directory = public_path('raptis_photos');
-    $imageFiles = glob($directory."/*.{jpg,jpeg,png,gif,svg,webp}", GLOB_BRACE);
-    $images = array_map('basename', $imageFiles);
+    $images = Image::all();
 
     return compact('categories', 'products', 'images', 'clients');
 
