@@ -21,9 +21,9 @@ function fetchData($locale = null)
     $products = Products::all();
     $clients = Client::all();
 
-    $images = Image::all();
+    // $images = Image::all();
 
-    return compact('categories', 'products', 'images', 'clients');
+    return compact('categories', 'products', 'clients');
 
 }
 
@@ -44,9 +44,9 @@ Route::group(['prefix' => '{locale}'], function () {
         return view('our-products', fetchData());
     });
 
-    Route::get('/about-us', function () {
-        return view('about-us', fetchData());
-    });
+    // Route::get('/about-us', function () {
+    //     return view('about-us', fetchData());
+    // });
 });
 
 // Default Route (redirects to default locale)

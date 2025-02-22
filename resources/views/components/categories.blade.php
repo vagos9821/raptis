@@ -1,17 +1,4 @@
-<div class="bg-background" id="categories">
-    <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-        {{-- Categories title --}}
-        <h2 class="text-primary mb-[50px] text-[40px] font-bold tracking-tight">{{ __('Κατηγοριές προϊόντων') }}</h2>
-
-        {{-- Category cards --}}
-        <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-            @foreach ($categories as $category)
-                @include('components.items.categories-card', ['category' => $category])
-            @endforeach
-        </div>
-    </div>
-</div>
-
+@include('components.products_photos_carousel')
 <!-- Product Detail Modal -->
 <div id="categoryModal" class="hidden fixed inset-0 z-[80] overflow-y-auto bg-black bg-opacity-50" role="dialog"
     tabindex="-1">
@@ -40,7 +27,8 @@
                     </h3>
                     <div class="h-px w-full bg-gray-200 dark:bg-neutral-700"></div>
                     <div class="mt-6">
-                        <ul id="modalDescription" class="text-primary flex flex-col gap-3 text-left text-sm"></ul>
+                        <ul id="modalDescription"
+                            class="text-primary flex flex-col gap-3 text-left text-sm text-leading-24"></ul>
                     </div>
                 </div>
             </div>

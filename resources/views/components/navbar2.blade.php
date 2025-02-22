@@ -54,9 +54,9 @@
                             {{ __('Τα προϊόντα μας') }}
                         </a>
 
-                        <a href="{{ url(app()->getLocale() . '/about-us') }}"
+                        <a href="{{ url(app()->getLocale() . '/') }}#contact-us"
                             class="rounded-md px-3 py-2 text-base font-medium transition-colors duration-200  {{ request()->is(app()->getLocale() . '/about-us*') ? 'bg-accent text-background' : 'text-primary hover:bg-accent/70 hover:text-white' }}">
-                            {{ __('Για εμάς') }}
+                            {{ __('Επικοινωνία') }}
                         </a>
                     </div>
                 </div>
@@ -104,9 +104,9 @@
                 {{ __('Τα προϊόντα μας') }}
             </a>
 
-            <a href="{{ url(app()->getLocale() . '/about-us') }}"
+            <a href="{{ url(app()->getLocale() . '/') }}#contact-us"
                 class="block rounded-md px-3 py-2 text-base font-medium {{ request()->is(app()->getLocale() . '/about-us*') ? 'bg-primary text-accent' : 'text-primary hover:bg-accent/70  hover:text-primary' }}">
-                {{ __('Για εμάς') }}
+                {{ __('Επικοινωνία') }}
             </a>
         </div>
 

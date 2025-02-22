@@ -13,7 +13,7 @@
     </div>
 </div> --}}
 {{-- Show All Products Main Content --}}
-<div class="flex flex-col items-center justify-center bg-background/10">
+{{-- <div class="flex flex-col items-center justify-center bg-background/10">
     <h1 class="mb-[50px] mt-[150px] text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl">
         {{ __('Τα προϊόντα μας') }}</h1>
     <div class="mb-6 flex flex-wrap items-center justify-center gap-3">
@@ -22,7 +22,9 @@
                 class="hover h-[180px] rounded-xl shadow-xl duration-300 ease-in-out hover:scale-110 lg:h-full">
         @endforeach
     </div>
-</div>
+</div> --}}
+@include('components.categories')
+
 {{-- Background effect start --}}
 {{-- <div class="fixed inset-x-0 bottom-[500px] -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
     <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-primary to-accent opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"

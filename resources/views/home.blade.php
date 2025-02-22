@@ -4,14 +4,16 @@
 @section('content')
     @include('components.navbar2')
     @include('components.hero')
-    @include('components.divider')
-    @include('components.products')
-    @include('components.divider')
-    @include('components.categories')
+    {{-- @include('components.divider')
+    @include('components.products') --}}
+    {{-- @include('components.divider') --}}
+    {{-- @include('components.categories') --}}
     {{-- @include('components.about-us') --}}
     {{-- @include('components.stripe') --}}
     {{-- @include('components.clients') --}}
     @include('components.divider')
+    @include('components.raptis-about')
+    @include('components.stripe')
     @include('carousel.index')
     @include('components.divider')
     @include('components.contact-us')

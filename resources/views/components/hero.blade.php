@@ -1,5 +1,5 @@
 <div class="" id="hero">
-    <div class="mx-w-[1440px] relative isolate flex h-[100vh] items-center justify-center px-6 pt-16 lg:px-8">
+    <div class="mx-w-[1440px] relative isolate flex min-h-[100vh] lg:h-[100vh] items-center justify-center px-6 lg:px-8">
         {{-- Background effect start --}}
         <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
             aria-hidden="true">
@@ -9,10 +9,10 @@
             </div>
         </div>
         {{-- Hero text --}}
-        <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:max-w-6xl lg:py-56">
-            <div class="hidden sm:mb-8 sm:flex sm:justify-center">
-                {{-- Small desktop text --}}
-                <div
+        <div class="mx-auto max-w-2xl py-32 lg:max-w-6xl lg:py-56">
+            {{-- <div class="hidden sm:mb-8 sm:flex sm:justify-center"> --}}
+            {{-- Small desktop text --}}
+            {{-- <div
                     class="text-primary relative rounded-full px-3 py-1 text-sm leading-6 ring-1 ring-primary/10 hover:ring-primary/20 xl:text-base">
                     {{ __('Χάρτινες τσάντες - είδη συσκευασίας...') }}
                     <a href="#categories" class="font-semibold text-accent">
@@ -20,30 +20,45 @@
                         {{ __('Read more') }}
                         <span aria-hidden="true">&rarr;</span>
                     </a>
-                </div>
-            </div>
+                </div> --}}
+            {{-- </div> --}}
             <div class="text-center">
                 {{-- Big text --}}
-                <h1 class="text-primary text-2xl font-bold tracking-tight md:text-3xl">
-                    {{ __('Η επιχείρηση μας ασχολείται με τις χάρτινες & πλαστικές τσάντες από το 1991 με ιδιαίτερη επιτυχία!') }}
+                <h1 class="text-primary text-2xl font-bold tracking-tight md:text-3xl duration-300">
+                    {{ __('Η επιχείρηση μας ασχολείται με τις χάρτινες & πλαστικές τσάντες από το 1991.') }}
                 </h1>
+                <p class="text-primary text-2xl font-bold tracking-tight md:text-3xl mb-10 duration-300">
+                    {{ __('Αρχικά ως E-BAGS και τώρα ως') }} <span class="text-accent">A.Raptis Packing.</span>
+                </p>
                 {{-- Small text --}}
-                <p class="text-primary text-lg leading-5 opacity-75 md:mt-6 md:text-xl md:leading-10 xl:text-xl">
+                <p
+                    class="text-primary text-lg leading-5 opacity-75 mt-6 md:text-xl leading-10 xl:text-xl hover:opacity-100 duration-300">
                     <span class="underline">{{ __('Είμαστε κάθετη μονάδα.') }}</span>
                     {{ __('Κατέχουμε όλο το πακέτο της συσκευασίας. Δημιουργούμε, τυπώνουμε, κατασκευάζουμε & παράγουμε τα προιόντα για να εξυπηρετήσουμε τις ανάγκες των επιχειρήσεων.') }}
                 </p>
-                {{-- Buttons --}}
-                <div class="mt-3 flex flex-col items-center justify-center gap-3 gap-x-6 md:mt-10 md:gap-6 lg:flex-row">
-                    <a href="#contact-us"
-                        class="bg-accent text-background rounded-md px-3.5 py-2.5 text-sm font-semibold shadow-sm transition-colors duration-200 ease-in-out hover:bg-primary hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent xl:text-base">
-                        {{ __('Επικοινωνία') }}
-                    </a>
-                    <a href={{ '/' . App::getLocale() . '/about-us' }}
-                        class="text-primary text-sm font-semibold leading-6 transition-colors duration-200 ease-in-out hover:text-accent xl:text-base">
-                        {{ __('Για εμάς') }}
-                        <span aria-hidden="true">→</span>
-                    </a>
-                </div>
+
+                <details id="read-more" class="duration-900 transition-all">
+                    <summary
+                        class="bg-accent text-primary text-sm leading-5 my-6 duration-300 px-4 py-2 rounded-full hover:scale-105 md:text-base cursor-pointer w-fit mx-auto">
+                        {{ __('Διαβάστε περισσοτέρα') }}
+                    </summary>
+                    <p
+                        class="text-primary text-lg leading-5 opacity-75 mt-6 md:text-xl leading-10 xl:text-xl hover:opacity-100 duration-300">
+                        {{ __('Είμαστε πολύ ευέλικτοι στις παραγγελίες από 500-10.000 τεμάχια. Μπορούμε να παραδώσουμε μέρος ή όλη την ποσότητα σε 2 εβδόμαδες κατόπιν συνεννοήσεως.') }}
+                    </p>
+                    <p
+                        class="text-primary text-lg leading-5 opacity-75 mt-6 md:text-xl leading-10 xl:text-xl hover:opacity-100 duration-300">
+                        {{ __('Υποστήριξη και συνεργασία με μεγάλους πιστοποιημένους οίκους σε Ελλάδα και εξωτερικό.') }}
+                    </p>
+                    <p
+                        class="text-primary text-lg leading-5 opacity-75 mt-6 md:text-xl leading-10 xl:text-xl hover:opacity-100 duration-300">
+                        {{ __('Αντιπρόσωπος μας θα σας επιδείξει δείγματα και θα σας ενημερώσσει για δυνατότητες, ποσότητες και κόστος. ') }}
+                    </p>
+                    <p
+                        class="text-primary text-lg leading-5 opacity-75 mt-6 md:text-xl leading-10 xl:text-xl hover:opacity-100 duration-300">
+                        {{ __('Επιλέξτε μας για να δημιουργήσουμε την δική σας μοναδική συσκευασία για το κατάστημα σας.') }}
+                    </p>
+                </details>
             </div>
         </div>
         {{-- Background effect end --}}
