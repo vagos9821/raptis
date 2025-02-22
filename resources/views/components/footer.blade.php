@@ -21,13 +21,13 @@
         <!-- List -->
         <ul class="flex flex-wrap justify-center items-center whitespace-nowrap gap-3 text-xs">
             <li class="mb-2 flex items-center justify-start md:mb-0">
-                @svg('map', 'size-6 fill-accent') {{ __('Ευφράτου 8 Βύρωνας 16232') }}
+                @svg('map', 'size-6 fill-accent') {{ __('Πλουτάρχου 39 Άγιος Δημήτριος 17342') }}
             </li>
             <li class="mb-2 flex items-center justify-start md:mb-0">
                 @svg('phone', 'size-6 fill-accent') +30 210 76 23 600
             </li>
             <li class="flex items-center justify-start">
-                @svg('mail', 'size-6 fill-accent') ebags@otenet.gr
+                @svg('mail', 'size-6 fill-accent') a.raptispacking@gmail.com
             </li>
 
         </ul>
